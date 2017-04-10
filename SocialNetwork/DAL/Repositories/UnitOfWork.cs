@@ -11,19 +11,16 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DAL.Repositories
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private ApplicationContext _applicationContext;
-        private ApplicationUserManager _userManager;
-        private ApplicationRoleManager _roleManager;
-        private IClientManager _clientManager;
 
         public UnitOfWork(string connectionString)
         {
             _applicationContext = new ApplicationContext(connectionString);
-            _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_applicationContext));
-            _roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_applicationContext));
-            _clientManager = new ClientManager(_applicationContext);
+            UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_applicationContext));
+            RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_applicationContext));
+            ClientManager = new ClientManager(_applicationContext);
         }
         public ApplicationRoleManager RoleManager { get; }
         public ApplicationUserManager UserManager { get; }
@@ -47,9 +44,9 @@ namespace DAL.Repositories
             {
                 if (disposing)
                 {
-                    _userManager.Dispose();
-                    _roleManager.Dispose();
-                    _clientManager.Dispose();
+                    UserManager.Dispose();
+                    RoleManager.Dispose();
+                    ClientManager.Dispose();
                 }
                 this.disposed = true;
             }

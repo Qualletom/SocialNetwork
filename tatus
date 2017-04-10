@@ -1,0 +1,23 @@
+[33mcommit e4acdd25bf58e4e3156fc47a0c681c7da4cf9625[m
+Author: Aliaksey <leshich2011@gmail.com>
+Date:   Mon Apr 10 17:51:09 2017 +0300
+
+    Add n-layer architecture, add registration and authorization
+
+[33mcommit 1e2b2fe3e2321fdd16b70d566d5da96b1ae3f713[m
+Author: Aliaksey <leshich2011@gmail.com>
+Date:   Thu Apr 6 23:58:40 2017 +0300
+
+    Add Identity to DAL
+
+[33mcommit bba8b2499327ad28ff8e10711309e0ba446f80e7[m
+Author: Aliaksey <leshich2011@gmail.com>
+Date:   Thu Apr 6 22:37:25 2017 +0300
+
+    Add DAL Layer with EntityFramework, Identity.Core and Identity.EntityFramework
+
+[33mcommit dc82bb238c124429fb04a38512844d06f249e06a[m
+Author: Aliaksey <leshich2011@gmail.com>
+Date:   Thu Apr 6 22:30:33 2017 +0300
+
+    Initial ASP.NET MVC 5 course project

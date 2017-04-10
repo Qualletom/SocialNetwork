@@ -17,6 +17,15 @@ namespace DAL.EF
         }
 
         public DbSet<ClientProfile> ClientProfiles { get; set; }
-
     }
+
+    //public class UserDbInitializer : DropCreateDatabaseAlways<ApplicationContext>
+    //{
+    //    protected override void Seed(ApplicationContext db)
+    //    {
+    //        db.Roles.Add(new ApplicationRole { Id = "1", Name = "admin" });
+    //        db.Roles.Add(new ApplicationRole { Id = "2", Name = "user" });
+    //        base.Seed(db);
+    //    }
+    //}
 }

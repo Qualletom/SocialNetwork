@@ -1,0 +1,16 @@
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\BLL.dll.config
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\BLL.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\BLL.pdb
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\DAL.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\EntityFramework.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\DAL.pdb
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\EntityFramework.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\obj\Debug\BLL.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\BLL\obj\Debug\BLL.pdb

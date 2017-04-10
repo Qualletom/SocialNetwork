@@ -1,0 +1,14 @@
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\DAL.dll.config
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\DAL.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\DAL.pdb
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\EntityFramework.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\EntityFramework.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.pdb
