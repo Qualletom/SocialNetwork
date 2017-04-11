@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using DAL.EF;
 using WEB.App_Start;
 
 namespace WEB
@@ -15,6 +16,9 @@ namespace WEB
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(
+                new DropCreateDatabaseIfModelChanges<ApplicationContext>());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

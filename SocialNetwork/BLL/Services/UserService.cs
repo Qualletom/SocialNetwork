@@ -31,15 +31,23 @@ namespace BLL.Services
             ApplicationUser user = await Database.UserManager.FindByEmailAsync(userDto.Email);
             if (user == null)
             {
-                user = new ApplicationUser {Email = userDto.Email, UserName = userDto.Email};
-                var result = await Database.UserManager.CreateAsync(user, userDto.Password);
-                if (result.Errors.Any())
+                user = new ApplicationUser {Email = userDto.Email, UserName = userDto.Email, FirstName = userDto.FirstName, LastName = userDto.LastName};
+
+                try
                 {
-                    return new OperationDetails(false,result.Errors.FirstOrDefault(),"");
+                    var result = await Database.UserManager.CreateAsync(user, userDto.Password);
+                    if (result.Errors.Any())
+                    {
+                        return new OperationDetails(false,result.Errors.FirstOrDefault(),"");
+                    }
+                    await Database.UserManager.AddToRolesAsync(user.Id, "user");
+                    await Database.SaveAsync();
+                    return new OperationDetails(true, "Вы успешно прошли регистрацию!", "");
                 }
-                await Database.UserManager.AddToRolesAsync(user.Id, "user");
-                await Database.SaveAsync();
-                return new OperationDetails(true, "Вы успешно прошли регистрацию!", "");
+                catch (Exception ex)
+                {
+                    return new OperationDetails(false, ex.Message, "");
+                }
             }
             else
             {

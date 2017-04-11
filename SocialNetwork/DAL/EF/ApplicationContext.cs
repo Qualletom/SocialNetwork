@@ -13,10 +13,8 @@ namespace DAL.EF
     {
         public ApplicationContext(string connectionString) : base(connectionString)
         {
-            
-        }
 
-        public DbSet<ClientProfile> ClientProfiles { get; set; }
+        }
     }
 
     //public class UserDbInitializer : DropCreateDatabaseAlways<ApplicationContext>

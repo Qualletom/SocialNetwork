@@ -22,10 +22,10 @@ namespace DAL.Repositories
             _applicationContext.Dispose();
         }
 
-        public void Create(ClientProfile profile)
+        public void Create(Profile profile)
         {
-            _applicationContext.ClientProfiles.Add(profile);
-            _applicationContext.SaveChanges();
+            //_applicationContext.ClientProfiles.Add(profile);
+            //_applicationContext.SaveChanges();
         }
     }
 }

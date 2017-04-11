@@ -85,8 +85,8 @@ namespace WEB.Controllers
                 {
                     Email = model.Email,
                     Password = model.Password,
-                    //Address = model.Address,
-                    //Name = model.Name,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     Role = "user"
                 };
                 OperationDetails operationDetails = await UserService.Create(userDto);

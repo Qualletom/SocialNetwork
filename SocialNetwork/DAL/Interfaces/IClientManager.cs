@@ -9,6 +9,6 @@ namespace DAL.Interfaces
 {
     public interface IClientManager : IDisposable
     {
-        void Create(ClientProfile profile);
+        void Create(Profile profile);
     }
 }
