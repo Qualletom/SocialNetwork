@@ -8,27 +8,27 @@ namespace WEB.Models
 {
     public class RegisterModel
     {
-
         [Required]
-        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "Введите имя")]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "Введите фамилию")]
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Введите e-mail")]
+        [EmailAddress(ErrorMessage = "Введен некорректный e-mail адрес")]
         public string Email { get; set; }
+
         [Required]
+        [Display(Name = "Введите пароль")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         [Required]
-        [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Display(Name = "Введите пароль ещё раз")]
+        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         public string ConfirmPassword { get; set; }
-        //[Required]
-        //public string Address { get; set; }
-        //[Required]
-        //public string Name { get; set; }
     }
 }

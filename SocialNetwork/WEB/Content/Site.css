@@ -1,24 +1,372 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    
+    margin: 0;
+    padding: 0;
+    background: #edf2f6;
+    background-image: url(../image/back.jpg);
+    line-height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Lato-Italic;
+    src: url(Montserrat-Regular.ttf);
+}
+
+
+.globalContainer {
+    height: 100vh;
+    background: #fb5834;
+    opacity: 0.98;
+}
+
+
+/*HEADER_START*/
+/*------------------------------------------------------------------------------*/
+.header {
+    display: flex;
+    justify-content: center;
+    background: #404257;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    width: 1270px;
+    height: 3.5em;
+}
+
+.header__logo {
+    width: 6em;
+    height: inherit;
+    background: orange;
+}
+
+.header__title {
+    margin: auto 0;
+    color: white;
+}
+
+.header__search {
+    display: flex;
+    width: 30vw;
+    height: inherit; 
+    color: #9196B5;
+}
+
+.header__search input[type="text"] {
+    flex-grow: 1;
+    background: #4a4c63;
+    padding: 5px 15px; 
+    border: 0;
+    color: #9196B5;
+}
+
+.header__search input[type="image"] {
+    width: 40px;
+    background: #4a4c63;
+    
+}
+
+.header__auth {
+    width: 10vw;    
+}
+
+.header__auth ul {
+    display: flex;
+    list-style-type: none; 
+    justify-content: space-between;
+    color: white;
+    cursor: pointer; 
+}
+
+ .header__profile {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 150px;
+     color: white;
+     cursor: pointer;
+ }
+
+/*HEADER_END*/
+/*------------------------------------------------------------------------------*/
+
+/*CONTAINER_HEADER_START*/
+/*------------------------------------------------------------------------------*/
+
+.container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 4vh;
+    width: 1270px;
+}
+
+.container__image {
+    height: 300px;
+    width: 100%;
+    background: orange;
+}
+
+.container__profileMenu {
+    display: flex;
+    height: 100px;
+    background: white;
+}
+
+.container__profileMenu ul {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none; 
+}
+ul li {
+    cursor: pointer;
+}
+
+/*CONTAINER_HEADER_END*/
+/*------------------------------------------------------------------------------*/
+
+/*CONTAINER_BODY_START*/
+/*------------------------------------------------------------------------------*/
+
+.container__body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.container__narrowBlockInfo,
+.container__wideBlockInfo {
+    /*display: flex;
+    flex-direction: column;*/
+    background: white;
+    height: 10%;
+}
+
+.container__narrowBlockInfo {
+    width: 35%;
+}
+
+.container__wideBlockInfo {
+    width: 62%;
+}
+
+.blockInfo__header {
+    display: flex;
+    align-items: center;
+    height:50px;    
+    border-bottom: 2px solid #edf2f6;
+}
+
+.blockInfo__header span {
+    padding-left: 20px;
+}
+
+.blockInfo__nawworBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.blockInfo__wideBody {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.nawworBody__info, .wideBody__info {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 30px;
+    
+}
+
+.nawworBody__info {
+
+}
+
+.wideBody__info {
+    flex-wrap: wrap;
+    flex-direction: column;
+    /*flex-direction: row;*/
+    width: 50%;
+}
+
+
+
+.nawworBody__info__label {
+    /*padding: 7% 0;*/
+    width: 30%;
+}
+
+.nawworBody__info__description {
+    /*padding: 7% 0;*/
+    width: 65%;
+}
+
+
+
+
+
+
+
+
+/*CONTAINER_BODY_END*/
+/*------------------------------------------------------------------------------*/
+
+
+input:focus {
+    outline: none;
+}
+
+/*input:-moz-placeholder{
+	text-indent: 20px;
+}
+input::-moz-placeholder{
+	text-indent: 20px;
+}
+input::-webkit-input-placeholder{
+	text-indent: 20px;
+}
+input:-ms-placeholder{
+	text-indent: 20px;
+}
+input::placeholder{
+	text-indent: 20px;
+}*/
+
+
+
+
+
+
+
+
+
+
+.form__join {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    /*height: 500px;*/
+    background: white;
+}
+
+.join__action {
+    height: 70px;
+}
+
+.join__action ul {
+    display: flex;
+    margin: 0;
+    padding: 0
+}
+
+.action__choose {
+    flex-grow: 1;
+    list-style: none;
+}
+
+.action__choose a {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    transition:.2s ease;
+    color: black;  
+    background: white;
+}
+
+.action__choose.is-active a {
+    color: white;
+    background: #ec3009;
+}
+
+/*.atcion__choose:c*/
+
+.join__regAuth, .join__login {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid #dcdde7;
+    
+}
+
+.join__regAuth {
+    display: none;
+}
+
+
+.content__field {
+    display: inherit;
+    flex-direction: column;
+    margin: 10px 0;
+    width: 80%;
+    /*height: 50px;*/
+}
+
+.content__field label {
+    font-size: 10pt;
+    color: #90809a;
+}
+
+.content__field input {
+    font-size: 12pt;
+    height: 50px;
+    padding: 5px 15px;
+    border: 1px solid #d9dbe6;
+    /*border-radius: 5%;*/
+    color: #646575;
+}
+
+.content__field input:focus {
+    border-color: orange;
+}
+
+.field__required {
+    color: red;
+}
+
+.join__complete {
+    margin-top: 30px;
+    width: 80%;
+    height: 50px;
+    background: #fe5f3a;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.join__complete:active {
+    background: #ec3009;
 }

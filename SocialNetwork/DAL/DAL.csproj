@@ -62,12 +62,10 @@
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Country.cs" />
-    <Compile Include="Entities\Faculty.cs" />
     <Compile Include="Entities\GenderEnum.cs" />
     <Compile Include="Entities\Interests.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\Profile.cs" />
-    <Compile Include="Entities\University.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Interfaces\IClientManager.cs" />

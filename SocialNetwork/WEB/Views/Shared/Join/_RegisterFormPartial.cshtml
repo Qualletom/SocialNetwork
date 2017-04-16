@@ -1,0 +1,37 @@
+﻿@model WEB.Models.RegisterModel
+
+@using (Html.BeginForm("Register", "Join", FormMethod.Post, new { @class = "join__regAuth", @id = "registration" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content__field">
+        <label>Имя<span class="field__required">*</span></label>
+        @Html.TextBoxFor(model => model.FirstName, new { placeholder = Html.DisplayNameFor(model => model.FirstName) })
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+    <div class="content__field">
+        <label>Фамилия<span class="field__required">*</span></label>
+        @Html.TextBoxFor(model => model.LastName, new { placeholder = Html.DisplayNameFor(model => model.LastName) })
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    <div class="content__field">
+        <label>E-mail<span class="field__required">*</span></label>
+        @Html.TextBoxFor(model => model.Email, new { placeholder = Html.DisplayNameFor(model => model.Email) })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="content__field">
+        <label>Пароль<span class="field__required">*</span></label>
+        @Html.PasswordFor(model => model.Password, new { placeholder = Html.DisplayNameFor(model => model.Password) })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div class="content__field">
+        <label>Подтверждение пароля<span class="field__required">*</span></label>
+        @Html.PasswordFor(model => model.ConfirmPassword, new { placeholder = Html.DisplayNameFor(model => model.ConfirmPassword) })
+    </div>
+
+    <input class="join__complete" type="submit" value="Зарегистрироваться" />
+
+}
+
+
+

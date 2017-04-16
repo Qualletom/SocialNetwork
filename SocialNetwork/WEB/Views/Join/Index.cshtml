@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Join</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+
+    <div class="globalContainer">
+        <div class="container">
+            <div class="form__join">
+                <div class="join__action">
+                    <ul>
+
+                        <li class="action__choose is-active"><a href="#login">Вход</a></li>
+                        <li class="action__choose"><a href="#registration">Регистрация</a></li>
+                    </ul>
+                    <!--<span ><a href="#">Регистрация</a></span>
+                    <span><a href="#">Вход</a></span>-->
+                </div>
+                <div class="join__body">
+                    @Html.Partial("Join/_RegisterFormPartial")
+                    @Html.Partial("Join/_LoginFormPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
+</body>
+</html>

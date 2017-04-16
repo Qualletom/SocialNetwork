@@ -15,20 +15,20 @@ namespace WEB.App_Start
 {
     public class Startup
     {
-       
+
+        IServiceCreator serviceCreator = new ServiceCreator();
         public void Configuration(IAppBuilder app)
         {
             app.CreatePerOwinContext(CreateUserService);
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString("/Join/Login"),
             });
         }
 
         private IUserService CreateUserService()
         {
-            IServiceCreator serviceCreator = new ServiceCreator();
             return serviceCreator.CreateUserService("DefaultConnection");
         }
     }
