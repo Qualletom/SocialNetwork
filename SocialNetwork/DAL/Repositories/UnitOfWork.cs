@@ -21,10 +21,12 @@ namespace DAL.Repositories
             UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_applicationContext));
             RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_applicationContext));
             ClientManager = new ClientManager(_applicationContext);
+            ProfileManager = new ProfileManager(_applicationContext);
         }
         public ApplicationRoleManager RoleManager { get; }
         public ApplicationUserManager UserManager { get; }
         public IClientManager ClientManager { get; }
+        public IProfileManager ProfileManager { get; set; }
         public async Task SaveAsync()
         {
             await _applicationContext.SaveChangesAsync();
@@ -44,9 +46,7 @@ namespace DAL.Repositories
             {
                 if (disposing)
                 {
-                    UserManager.Dispose();
-                    RoleManager.Dispose();
-                    ClientManager.Dispose();
+                    _applicationContext.Dispose();
                 }
                 this.disposed = true;
             }

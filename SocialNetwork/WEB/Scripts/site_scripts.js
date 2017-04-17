@@ -8,7 +8,7 @@ $(document).ready(function() {
                     $(this).parent().addClass("is-active");
                     $(this).parent().siblings().removeClass("is-active");
 
-                    var target = $(this).attr('href');
+                    var target = $(this).attr("href");
                     $(".join__body > form").not(target).hide();
                     $(target).css("display", 'flex');
                 }

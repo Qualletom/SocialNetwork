@@ -76,3 +76,10 @@ D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Microsoft.Owin.Security.xml
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Microsoft.Owin.Security.Cookies.xml
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Common.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Mvc.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\WebActivatorEx.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Common.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Mvc.xml

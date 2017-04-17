@@ -17,7 +17,7 @@ namespace WEB.Filters
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
         {
             var user = filterContext.HttpContext.User;
-            if (user != null || user.Identity.IsAuthenticated)
+            if (user.Identity.IsAuthenticated)
             {
                 filterContext.Result = new RedirectToRouteResult(
                     new System.Web.Routing.RouteValueDictionary {

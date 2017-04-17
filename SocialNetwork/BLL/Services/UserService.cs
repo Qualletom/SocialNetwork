@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity;
 
 namespace BLL.Services
 {
-    class UserService : IUserService
+    public class UserService : IUserService
     {
         private IUnitOfWork Database { get; set; }
 

@@ -18,12 +18,11 @@ namespace WEB.Controllers
     [OnlyNotAuthorized]
     public class JoinController : Controller
     {
-        private IUserService UserService
+        private readonly IUserService _userService;
+
+        public JoinController(IUserService userService)
         {
-            get
-            {
-                return HttpContext.GetOwinContext().GetUserManager<IUserService>();
-            }
+            _userService = userService;
         }
 
         private IAuthenticationManager AuthenticationManager
@@ -46,7 +45,7 @@ namespace WEB.Controllers
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
-                ClaimsIdentity claim = await UserService.Authenticate(userDto);
+                ClaimsIdentity claim = await _userService.Authenticate(userDto);
                 if (claim == null)
                 {
                     ModelState.AddModelError("", "Неверный логин или пароль.");
@@ -89,7 +88,7 @@ namespace WEB.Controllers
                     LastName = model.LastName,
                     Role = "user"
                 };
-                OperationDetails operationDetails = await UserService.Create(userDto);
+                OperationDetails operationDetails = await _userService.Create(userDto);
                 if (operationDetails.Succedeed)
                 {
                     return RedirectToAction("Index", "Home");
@@ -103,7 +102,7 @@ namespace WEB.Controllers
         }
         private async Task SetInitialDataAsync()
         {
-            await UserService.SetInitData();
+            await _userService.SetInitData();
         }
 
         [Authorize]

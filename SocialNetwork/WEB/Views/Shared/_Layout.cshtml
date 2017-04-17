@@ -45,15 +45,16 @@
                 </div>
                 <div class="container__profileMenu">
                     <ul>
-                        <li>Диалоги</li>
-                        <li>Друзья</li>
-                        <li>Алексей Кохонов</li>
-                        <li>Фото</li>
-                        <li>О себе</li>
+                        <li>@Ajax.ActionLink("Диалоги","Index",new AjaxOptions {UpdateTargetId = "test"})</li>
+                        <li>@Ajax.ActionLink("Друзья","Index", new AjaxOptions { UpdateTargetId = "test" })</li>
+                        <li>@Ajax.ActionLink("Алексей Кохонов", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
+                        <li>@Ajax.ActionLink("Фото", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
+                        <li>@Ajax.ActionLink("О себе", "About", "Home", new AjaxOptions { UpdateTargetId = "test" })</li>
                     </ul>
                 </div>
             </div>
-        </div>
+            <div id="test" class="container__body">
+            </div>
     </div>
 
             <div class="navbar navbar-inverse navbar-fixed-top">
