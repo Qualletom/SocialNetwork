@@ -21,6 +21,8 @@ namespace DAL.Entities
         public DateTime Created { get; set; }
 
         public int ProfileId { get; set; }
+
+        [Required]
         public Profile Profile { get; set; }
 
         public int InterestsId { get; set; }
