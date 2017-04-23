@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL.DTO;
 using WEB.Filters;
+using WEB.Models.CombinedModels;
 
 namespace WEB.Controllers
 {
@@ -32,8 +33,10 @@ namespace WEB.Controllers
 
         public ActionResult About()
         {
-
-            return PartialView("Home/_AboutViewPartial");
+            if (Request.IsAjaxRequest())
+                return PartialView("Home/_ProfileAboutViewPartial");
+            else
+                return View("Home/_ProfileAboutViewPartial");
         }
     }
 }

@@ -114,7 +114,10 @@ namespace WEB.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            return View();
+            //if (Request.IsAjaxRequest())
+            //    return PartialView("Join/_IndexPartial");
+            //else
+                return View();
         }
     }
 }

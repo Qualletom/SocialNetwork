@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BLL.Mappers
 {
-    public statis class BllEntitiesMapper
+    public static class BllEntitiesMapper
     {
-
+        
     }
 }

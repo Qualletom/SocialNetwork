@@ -1,4 +1,13 @@
-$(document).ready(function() {
+$(document)
+    .ready(function() {
+
+        joinTabClick();
+
+
+    });
+
+
+function joinTabClick() {
     $(".action__choose a")
         .on("click",
             function(e) {
@@ -12,11 +21,32 @@ $(document).ready(function() {
                     $(".join__body > form").not(target).hide();
                     $(target).css("display", 'flex');
                 }
+            }
+    )};
 
-            });
-}) 
-    
+var pushHistory = true;
 
+function profileMenuClick(href) {
+    $(".container__profileMenu a[href=\"" + href + "\"]").click();
+    pushHistory = false;
+}
+
+function onSuccess(elem, data) {
+    if (pushHistory) {
+        var href = $(elem).attr("href");
+        history.pushState({ data: data, href: href }, "", href);
+    } else
+        pushHistory = true;
+
+}
+
+window.onpopstate = function(event) {
+    if (event.state != null) {
+        var href = event.state.href;
+        profileMenuClick(href);
+    }
+};
+ 
 
 
 

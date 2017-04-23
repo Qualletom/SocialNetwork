@@ -45,15 +45,16 @@
                 </div>
                 <div class="container__profileMenu">
                     <ul>
-                        <li>@Ajax.ActionLink("Диалоги","Index",new AjaxOptions {UpdateTargetId = "test"})</li>
+                        <li>@Ajax.ActionLink("Диалоги", "Index", new AjaxOptions { UpdateTargetId = "test"})</li>
                         <li>@Ajax.ActionLink("Друзья","Index", new AjaxOptions { UpdateTargetId = "test" })</li>
                         <li>@Ajax.ActionLink("Алексей Кохонов", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
-                        <li>@Ajax.ActionLink("Фото", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
-                        <li>@Ajax.ActionLink("О себе", "About", "Home", new AjaxOptions { UpdateTargetId = "test" })</li>
+                        <li>@Ajax.ActionLink("Фото", "Index","Join", new AjaxOptions { UpdateTargetId = "test", OnSuccess = "onSuccess(this, data)" })</li>
+                        <li>@Ajax.ActionLink("О себе", "About", "Home", new AjaxOptions { UpdateTargetId = "test", OnSuccess = "onSuccess(this, data)" })</li>
                     </ul>
                 </div>
             </div>
             <div id="test" class="container__body">
+                @RenderBody()
             </div>
     </div>
 
@@ -77,7 +78,6 @@
                 </div>
             </div>
             <div class="container body-content">
-                @RenderBody()
                 <hr />
                 <footer>
                     <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -85,7 +85,8 @@
             </div>
 
             @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/js")
             @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
+            @RenderSection("scripts", required: false)</div>
 </body>
 </html>

@@ -83,3 +83,6 @@ D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.xml
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Common.xml
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\Ninject.Web.Mvc.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.config
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.xml

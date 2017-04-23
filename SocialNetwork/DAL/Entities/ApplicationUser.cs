@@ -20,6 +20,7 @@ namespace DAL.Entities
         [Column(TypeName = "Date")]
         public DateTime Created { get; set; }
 
+   
         public int ProfileId { get; set; }
 
         [Required]
