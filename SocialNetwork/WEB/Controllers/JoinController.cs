@@ -11,7 +11,9 @@ using BLL.Interfaces;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WEB.Filters;
+using WEB.Infrastructure.Mappers;
 using WEB.Models;
+using WEB.Models.Account;
 
 namespace WEB.Controllers
 {
@@ -35,7 +37,11 @@ namespace WEB.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            if (Request.IsAjaxRequest())
+                return PartialView("_LoginFormPartial");
+            ViewBag.method = "login";
+            return View("_LoginFormPartial", masterName: "_JoinLayout");
+            
         }
 
         [HttpPost]
@@ -60,7 +66,7 @@ namespace WEB.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-            return View(model);
+            return View("_LoginFormPartial", masterName: "_JoinLayout");
         }
 
         public ActionResult Logout()
@@ -71,7 +77,10 @@ namespace WEB.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            if (Request.IsAjaxRequest())
+                return PartialView("_RegisterFormPartial");
+            ViewBag.method = "register";
+            return View("_RegisterFormPartial", masterName: "_JoinLayout");
         }
 
         [HttpPost]
@@ -80,25 +89,25 @@ namespace WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                UserDTO userDto = new UserDTO
-                {
-                    Email = model.Email,
-                    Password = model.Password,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Role = "user"
-                };
-                OperationDetails operationDetails = await _userService.Create(userDto);
+                BllUser bllUser = model.ToBllUser();
+                //UserDTO userDto = new UserDTO
+                //{
+                //    Email = model.Email,
+                //    Password = model.Password,
+                //    FirstName = model.FirstName,
+                //    LastName = model.LastName,
+                //    Role = "user"
+                //};
+                OperationDetails operationDetails = await _userService.Create(bllUser);
                 if (operationDetails.Succedeed)
                 {
                     return RedirectToAction("Index", "Home");
 
                 }
                 ModelState.AddModelError(operationDetails.Property, operationDetails.Message);
-                return View(model);
 
             }
-            return View();
+            return View("_RegisterFormPartial", masterName: "_JoinLayout");
         }
         private async Task SetInitialDataAsync()
         {
@@ -111,13 +120,10 @@ namespace WEB.Controllers
             return View("Error");
         }
 
-        // GET: Account
+        //GET: Account
         public ActionResult Index()
         {
-            //if (Request.IsAjaxRequest())
-            //    return PartialView("Join/_IndexPartial");
-            //else
-                return View();
+            return View();
         }
     }
 }

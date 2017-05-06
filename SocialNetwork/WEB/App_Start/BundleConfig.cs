@@ -28,8 +28,10 @@ namespace WEB
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+            bundles.Add(new ScriptBundle("~/bundles/siteJs").Include(
                       "~/Scripts/site_scripts.js"));
+            bundles.Add(new ScriptBundle("~/bundles/joinJs").Include(
+                      "~/Scripts/join_script.js"));
         }
     }
 }

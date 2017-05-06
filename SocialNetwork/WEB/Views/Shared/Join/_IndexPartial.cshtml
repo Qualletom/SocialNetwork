@@ -1,14 +1,15 @@
 ﻿<div class="form__join">
     <div class="join__action">
         <ul>
-
+            @*@Ajax.ActionLink("Вход","Login","Join",new AjaxOptions() {UpdateTargetId = "updateId"})
+            @Ajax.ActionLink("Регистрация", "Register", "Join", new AjaxOptions() { UpdateTargetId = "updateId" })*@
             <li class="action__choose is-active"><a href="#login">Вход</a></li>
             <li class="action__choose"><a href="#registration">Регистрация</a></li>
         </ul>
         <!--<span ><a href="#">Регистрация</a></span>
         <span><a href="#">Вход</a></span>-->
     </div>
-    <div class="join__body">
+    <div id="updateId" class="join__body">
         @Html.Partial("Join/_RegisterFormPartial")
         @Html.Partial("Join/_LoginFormPartial")
     </div>

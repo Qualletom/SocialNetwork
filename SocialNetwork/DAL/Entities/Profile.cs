@@ -11,10 +11,8 @@ namespace DAL.Entities
     public class Profile
     {
         [Key]
-        [ForeignKey("ApplicationUser")]
-        public string Id { get; set; }
+        public int ProfileId { get; set; }
 
-        [Required]
         public byte[] Avatar { get; set; }
         public string MobilePhoneNumber { get; set; }
 
@@ -30,10 +28,10 @@ namespace DAL.Entities
         public string Status { get; set; }
         public string About { get; set; }
 
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
         public City City { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        //public ApplicationUser ApplicationUser { get; set; }
 
         public List<Language> Languages { get; set; }
     }

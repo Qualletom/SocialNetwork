@@ -62,22 +62,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\ApplicationContext.cs" />
-    <Compile Include="Entities\ApplicationRole.cs" />
+    <Compile Include="Entities\Identity\ApplicationClaimsPrincipal.cs" />
+    <Compile Include="Entities\Identity\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\GenderEnum.cs" />
+    <Compile Include="Entities\Identity\ApplicationUserClaim.cs" />
+    <Compile Include="Entities\Identity\ApplicationUserLogin.cs" />
+    <Compile Include="Entities\Identity\ApplicationUserRole.cs" />
     <Compile Include="Entities\Interests.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\Profile.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
+    <Compile Include="Identity\ApplicationRoleStore.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
+    <Compile Include="Identity\ApplicationUserStore.cs" />
+    <Compile Include="Interfaces\IApplicationRoleStore.cs" />
+    <Compile Include="Interfaces\IApplicationUserStore.cs" />
     <Compile Include="Interfaces\IClientManager.cs" />
+    <Compile Include="Interfaces\IInterestsManager.cs" />
     <Compile Include="Interfaces\IProfileManager.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201705020225366_MigrationDB.cs" />
+    <Compile Include="Migrations\201705020225366_MigrationDB.Designer.cs">
+      <DependentUpon>201705020225366_MigrationDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientManager.cs" />
+    <Compile Include="Repositories\InterestsManager.cs" />
     <Compile Include="Repositories\ProfileManager.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
   </ItemGroup>
@@ -85,7 +100,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705020225366_MigrationDB.resx">
+      <DependentUpon>201705020225366_MigrationDB.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -26,16 +26,31 @@ namespace BLL.Services
             Database.Dispose();
         }
 
-        public async Task<OperationDetails> Create(UserDTO userDto)
+        public async Task<OperationDetails> Create(BllUser bllUser)
         {
-            ApplicationUser user = await Database.UserManager.FindByEmailAsync(userDto.Email);
+             ApplicationUser user = await Database.UserManager.FindByEmailAsync(bllUser.Email);
+
             if (user == null)
             {
-                user = new ApplicationUser {Email = userDto.Email, UserName = userDto.Email, FirstName = userDto.FirstName, LastName = userDto.LastName};
+                //Profile profile = 
+                //Interests 
+                user = new ApplicationUser
+                {
+                    Email = bllUser.Email,
+                    UserName = bllUser.Email,
+                    FirstName = bllUser.FirstName,
+                    LastName = bllUser.LastName,
+                    Profile = new Profile()
+                    {
+                        Gender = (GenderEnum)bllUser.Gender
+                    },
+                Interests = new Interests() { }
+
+            };
 
                 try
                 {
-                    var result = await Database.UserManager.CreateAsync(user, userDto.Password);
+                    var result = await Database.UserManager.CreateAsync(user, bllUser.Password);
                     if (result.Errors.Any())
                     {
                         return new OperationDetails(false,result.Errors.FirstOrDefault(),"");
@@ -51,7 +66,7 @@ namespace BLL.Services
             }
             else
             {
-                return new OperationDetails(false,"Пользователь с таким логином уже существует","");
+                return new OperationDetails(false,"Такой пользователь уже существует","");
             }
         }
 
@@ -70,7 +85,7 @@ namespace BLL.Services
         public async Task SetInitData()
         {
             //ApplicationRole roleAdmin = new ApplicationRole {Id = "1", Name = "admin"};
-            ApplicationRole roleUser = new ApplicationRole { Id = "2", Name = "user" };
+            ApplicationRole roleUser = new ApplicationRole { Id = 2, Name = "user" };
             List<ApplicationRole> roles = Database.RoleManager.Roles.ToList();
             //await Database.RoleManager.DeleteAsync(new ApplicationRole {Id = "1", Name = "admin"});
             //await Database.RoleManager.CreateAsync(roleAdmin);

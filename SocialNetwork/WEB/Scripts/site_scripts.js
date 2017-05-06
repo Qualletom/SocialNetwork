@@ -17,9 +17,9 @@ function joinTabClick() {
                     $(this).parent().addClass("is-active");
                     $(this).parent().siblings().removeClass("is-active");
 
-                    var target = $(this).attr("href");
-                    $(".join__body > form").not(target).hide();
-                    $(target).css("display", 'flex');
+                    //var target = $(this).attr("href");
+                    //$(".join__body > form").not(target).hide();
+                    //$(target).css("display", 'flex');
                 }
             }
     )};
@@ -29,6 +29,11 @@ var pushHistory = true;
 function profileMenuClick(href) {
     $(".container__profileMenu a[href=\"" + href + "\"]").click();
     pushHistory = false;
+}
+
+function onSuccessJoin(elem) {
+    var href = $(elem).attr("href");
+    history.pushState("", "", href);
 }
 
 function onSuccess(elem, data) {

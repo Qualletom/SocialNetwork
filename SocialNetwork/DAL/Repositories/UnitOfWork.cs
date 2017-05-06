@@ -13,20 +13,23 @@ namespace DAL.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private ApplicationContext _applicationContext;
+        private readonly ApplicationContext _applicationContext;
 
         public UnitOfWork(string connectionString)
         {
             _applicationContext = new ApplicationContext(connectionString);
-            UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_applicationContext));
-            RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_applicationContext));
+            UserManager = new ApplicationUserManager(new ApplicationUserStore(_applicationContext));
+            RoleManager = new ApplicationRoleManager(new ApplicationRoleStore(_applicationContext));
             ClientManager = new ClientManager(_applicationContext);
             ProfileManager = new ProfileManager(_applicationContext);
+            InterestsManager = new InterestsManager(_applicationContext);
         }
         public ApplicationRoleManager RoleManager { get; }
         public ApplicationUserManager UserManager { get; }
         public IClientManager ClientManager { get; }
         public IProfileManager ProfileManager { get; set; }
+        public IInterestsManager InterestsManager { get; }
+
         public async Task SaveAsync()
         {
             await _applicationContext.SaveChangesAsync();
@@ -38,17 +41,17 @@ namespace DAL.Repositories
             GC.SuppressFinalize(this);
         }
 
-        private bool disposed = false;
+        private bool _disposed = false;
 
         public virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
                     _applicationContext.Dispose();
                 }
-                this.disposed = true;
+                this._disposed = true;
             }
         }
     }

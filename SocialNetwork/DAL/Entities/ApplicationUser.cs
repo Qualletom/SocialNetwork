@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Entities.Identity;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DAL.Entities
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser<int,ApplicationUserLogin, ApplicationUserRole,ApplicationUserClaim>
     {
         [Required]
         public string FirstName { get; set; }
@@ -23,10 +25,9 @@ namespace DAL.Entities
    
         public int ProfileId { get; set; }
 
-        [Required]
-        public Profile Profile { get; set; }
+        public virtual Profile Profile { get; set; }
 
         public int InterestsId { get; set; }
-        public Interests Interests { get; set; }
+        public virtual Interests Interests { get; set; }
     }
 }

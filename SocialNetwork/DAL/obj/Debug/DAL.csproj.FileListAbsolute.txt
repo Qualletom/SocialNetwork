@@ -14,3 +14,5 @@ D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.pdb
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\NLog.dll
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\bin\Debug\NLog.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.Migrations.MigrationDB.resources
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache

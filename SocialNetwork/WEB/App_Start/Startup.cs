@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using BLL.Interfaces;
-using BLL.Services;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
+using WEB;
 
-[assembly: OwinStartup(typeof(WEB.App_Start.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
-namespace WEB.App_Start
+namespace WEB
 {
     public class Startup
     {

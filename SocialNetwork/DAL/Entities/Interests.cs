@@ -11,8 +11,7 @@ namespace DAL.Entities
     public class Interests
     {
         [Key]
-        [ForeignKey("ApplicationUser")]
-        public string Id { get; set; }
+        public int InterestsId { get; set; }
 
         public string Hobbies { get; set; }
         public string TvShows { get; set; }
@@ -22,6 +21,6 @@ namespace DAL.Entities
         public string Books { get; set; }
         public string Writers { get; set; }
         public string Other { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+       // public ApplicationUser ApplicationUser { get; set; }
     }
 }

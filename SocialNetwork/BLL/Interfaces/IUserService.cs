@@ -11,7 +11,7 @@ namespace BLL.Interfaces
 {
     public interface IUserService : IDisposable
     {
-        Task<OperationDetails> Create(UserDTO userDto);
+        Task<OperationDetails> Create(BllUser bllUser);
         Task<ClaimsIdentity> Authenticate(UserDTO userDto);
         Task SetInitData();
     }

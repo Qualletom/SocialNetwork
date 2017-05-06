@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Join</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+
+    <div class="globalContainer">
+        <div class="container">
+            <div class="form__join">
+                <div class="join__action">
+                    <ul>
+                        <li class="action__choose">@Ajax.ActionLink("Вход", "Login", "Join", null, new AjaxOptions() { UpdateTargetId = "updateId", OnSuccess = "onSuccess(this, data)" })</li>
+                        <li class="action__choose">@Ajax.ActionLink("Регистрация", "Register", "Join", null, new AjaxOptions() { UpdateTargetId = "updateId", OnSuccess = "onSuccess(this, data)" })</li>  
+                    </ul>
+                </div>
+                <div class="join__body" id="updateId">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/joinJs")
+    @*@if (ViewBag.method == "login")
+    {
+        <script>
+            $("#a_login").trigger("click");
+        </script>
+    }
+    else
+    {
+        <script>
+            $("#a_register").trigger("click");
+        </script>
+    }*@
+</body>
+</html>

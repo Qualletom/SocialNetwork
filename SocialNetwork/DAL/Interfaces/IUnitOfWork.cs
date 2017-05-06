@@ -14,6 +14,8 @@ namespace DAL.Interfaces
         ApplicationRoleManager RoleManager { get; }
         ApplicationUserManager UserManager { get; }
         IClientManager ClientManager { get; }
+        IProfileManager ProfileManager { get; }
+        IInterestsManager InterestsManager { get; }
         Task SaveAsync();
     }
 }
