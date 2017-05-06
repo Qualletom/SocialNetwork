@@ -20,9 +20,9 @@ namespace WEB.Controllers
     [OnlyNotAuthorized]
     public class JoinController : Controller
     {
-        private readonly IUserService _userService;
+        private readonly IUserIdentityService _userService;
 
-        public JoinController(IUserService userService)
+        public JoinController(IUserIdentityService userService)
         {
             _userService = userService;
         }

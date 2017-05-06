@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.AspNet.Identity;
 
 namespace WEB
 {
@@ -16,7 +17,7 @@ namespace WEB
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Profile", action = "ShowUser", id = 2}//HttpContext.Current.User.Identity.GetUserId() }
             );
 
             //routes.MapRoute(
@@ -24,6 +25,8 @@ namespace WEB
             //    url: "{action}/{id}",
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
+
+
         }
     }
 }

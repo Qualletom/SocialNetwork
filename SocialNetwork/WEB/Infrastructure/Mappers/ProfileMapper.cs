@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using BLL.DTO;
-using DAL.Entities;
-using WEB.Models;
+﻿using BLL.DTO;
+using WEB.Models.Profile;
 
-namespace WEB.Mappers
+namespace WEB.Infrastructure.Mappers
 {
     public static class ProfileMapper
     {

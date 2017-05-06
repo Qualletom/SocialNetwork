@@ -5,6 +5,7 @@ using System.Web;
 using BLL.DTO;
 using WEB.Models;
 using WEB.Models.Account;
+using WEB.Models.User;
 
 namespace WEB.Infrastructure.Mappers
 {
@@ -18,10 +19,28 @@ namespace WEB.Infrastructure.Mappers
                 Password = registerModel.Password,
                 FirstName = registerModel.FirstName,
                 LastName = registerModel.LastName,
-                Role = "user",
+                //Role = "user",
                 Gender = registerModel.Gender
             };
             return bllUser;
+        }
+
+        public static UserModel ToUserModel(this BllUser bllUser)
+        {
+            if (bllUser == null)
+                return null;
+            UserModel userModel = new UserModel()
+            {
+                Id = bllUser.Id,
+                LastName = bllUser.LastName,
+                FirstName = bllUser.FirstName,
+                Avatar = bllUser.Avatar,
+                ProfileId = bllUser.ProfileId,
+                Profile = bllUser.BllProfile.ToWebProfile(),
+                InterestsId = bllUser.InterestsId,
+                Interests = bllUser.BllInterest.ToWebInterests(),
+            };
+            return userModel;
         }
     }
 }

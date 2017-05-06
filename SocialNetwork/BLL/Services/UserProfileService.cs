@@ -11,7 +11,7 @@ using DAL.Interfaces;
 
 namespace BLL.Services
 {
-    public class UserProfileService :IUserProfileService
+    public class UserProfileService
     {
         private readonly IUnitOfWork _database;
 

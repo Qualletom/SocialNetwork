@@ -1,4 +1,4 @@
-﻿@model WEB.Models.InterestsModel
+﻿@model WEB.Models.Profile.InterestsModel
 
 <div class="container__wideBlockInfo">
     <div class="blockInfo__header">
@@ -7,76 +7,21 @@
     <div class="blockInfo__wideBody">
         @foreach (var property in ViewData.ModelMetadata.Properties)
         {
-            <div class="wideBody__info">
-                <div class="info__label">
-                    <span>@property.PropertyName</span>
-                </div>
-                <div class="info__description">
-                    <span>
-                        @property.DisplayName
-                    </span>
+            if (property.Model != null)
+            {
+                <div class="wideBody__info">
+                    <div class="info__label">
+                        <span>@property.PropertyName</span>
+                    </div>
+                    <div class="info__description">
+                        <span>
+                            @property.Model
+                        </span>
+
+                    </div>
 
                 </div>
-
-            </div>
+            }
         }
-        
-        @*<div class="wideBody__info">
-            <div class="info__label">
-                <span>About me:</span>
-            </div>
-            <div class="info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-
-        <div class="wideBody__info">
-            <div class="info__label">
-                <span>About me:</span>
-            </div>
-            <div class="info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-        <div class="wideBody__info">
-            <div class="info__label">
-                <span>About me:</span>
-            </div>
-            <div class="info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-
-        <div class="wideBody__info">
-            <div class="info__label">
-                <span>About me:</span>
-            </div>
-            <div class="info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>*@
-
-
-
     </div>
 </div>

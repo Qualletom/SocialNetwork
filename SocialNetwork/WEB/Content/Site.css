@@ -35,6 +35,10 @@ a {
     text-decoration: none;
 }
 
+ul li {
+    list-style-type: none;
+}
+
 @font-face {
     font-family: Lato-Italic;
     src: url(Montserrat-Regular.ttf);
@@ -117,6 +121,18 @@ a {
  }
 
 /*HEADER_END*/
+/*------------------------------------------------------------------------------*/
+
+/*LEFT_MENU_START*/
+/*------------------------------------------------------------------------------*/
+
+.globalContainer__leftMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*LEFT_MENU_END*/
 /*------------------------------------------------------------------------------*/
 
 /*CONTAINER_HEADER_START*/

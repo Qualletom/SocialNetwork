@@ -85,9 +85,9 @@
     <Compile Include="Interfaces\IProfileManager.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201705020225366_MigrationDB.cs" />
-    <Compile Include="Migrations\201705020225366_MigrationDB.Designer.cs">
-      <DependentUpon>201705020225366_MigrationDB.cs</DependentUpon>
+    <Compile Include="Migrations\201705061709585_MigrationDb.cs" />
+    <Compile Include="Migrations\201705061709585_MigrationDb.Designer.cs">
+      <DependentUpon>201705061709585_MigrationDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,8 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705020225366_MigrationDB.resx">
-      <DependentUpon>201705020225366_MigrationDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705061709585_MigrationDb.resx">
+      <DependentUpon>201705061709585_MigrationDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,8 +12,6 @@ namespace DAL.Entities
     {
         [Key]
         public int ProfileId { get; set; }
-
-        public byte[] Avatar { get; set; }
         public string MobilePhoneNumber { get; set; }
 
         [Column(TypeName = "Date")]

@@ -1,83 +1,29 @@
-﻿@model WEB.Models.ProfileModel
+﻿@model WEB.Models.Profile.ProfileModel
 
 <div class="container__narrowBlockInfo">
     <div class="blockInfo__header">
         <span>Персональная информация</span>
     </div>
     <div class="blockInfo__nawworBody">
-        
+       
         @foreach (var property in ViewData.ModelMetadata.Properties)
         {
-            <div class="nawworBody__info">
-                <div class="nawworBody__info__label">
-                    <span>@property.PropertyName</span>
-                </div>
-                <div class="nawworBody__info__description">
-                    <span>
-                        @property.DisplayName
-                    </span>
+            if (property.Model != null)
+            {
+                <div class="nawworBody__info">
+                    <div class="nawworBody__info__label">
+                        <span>@property.PropertyName</span>
+                    </div>
+                    <div class="nawworBody__info__description">
+                        <span>
+                            @property.Model
+                        </span>
+
+                    </div>
 
                 </div>
+            }
 
-            </div>
         }
-        @*<div class="nawworBody__info">
-            <div class="nawworBody__info__label">
-                <span>About me:</span>
-            </div>
-            <div class="nawworBody__info__description">
-                @foreach (var property in ViewData.ModelMetadata.Properties)
-                {
-                    <span>
-                        @property.SimpleDisplayText
-                    </span>
-                }
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-        <div class="nawworBody__info">
-            <div class="nawworBody__info__label">
-                <span>About me:</span>
-            </div>
-            <div class="nawworBody__info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-        <div class="nawworBody__info">
-            <div class="nawworBody__info__label">
-                <span>About me:</span>
-            </div>
-            <div class="nawworBody__info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmmm
-                </span>
-
-            </div>
-
-        </div>
-        <div class="nawworBody__info">
-            <div class="nawworBody__info__label">
-                <span>About me:</span>
-            </div>
-            <div class="nawworBody__info__description">
-                <span>
-                    текст-"рыба", часто используемый в печати и вэб-дизайне.
-                    Lorem nnnnnn mmmm
-                </span>
-
-            </div>
-
-        </div>*@
     </div>
 </div>

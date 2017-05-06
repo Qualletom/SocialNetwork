@@ -15,7 +15,7 @@ namespace UnitTestProject
         [TestMethod]
         public async Task TestMethod1()
         {
-            UserService userService = new UserService(new UnitOfWork("DefaultConnection"));
+            UserIdentityService userService = new UserIdentityService(new UnitOfWork("DefaultConnection"));
             UserDTO userDto = new UserDTO()
             {
                 Email = "a@gmail.com",

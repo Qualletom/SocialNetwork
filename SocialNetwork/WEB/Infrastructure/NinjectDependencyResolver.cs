@@ -27,8 +27,10 @@ namespace WEB.Util
         }
         private void AddBindings()
         {
+            _kernel.Bind<IUserIdentityService>().To<UserIdentityService>();
+            _kernel.Bind<IInterestsService>().To<InterestsService>();
+            _kernel.Bind<IProfileService>().To<ProfileService>();
             _kernel.Bind<IUserService>().To<UserService>();
-            _kernel.Bind<IUserProfileService>().To<UserProfileService>();
         }
     }
 }

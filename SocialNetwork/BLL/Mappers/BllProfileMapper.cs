@@ -17,7 +17,7 @@ namespace BLL.Mappers
             Profile profile = new Profile()
             {
                 ProfileId = bllProfile.Id,
-                Avatar = bllProfile.Avatar,
+                //Avatar = bllProfile.Avatar,
                 MobilePhoneNumber = bllProfile.MobilePhoneNumber,
                 BirthDate = bllProfile.BirthDate,
                 BirthPlace = bllProfile.BirthPlace,
@@ -36,7 +36,7 @@ namespace BLL.Mappers
             BllProfile bllProfile = new BllProfile()
             {
                 Id = profile.ProfileId,
-                Avatar = profile.Avatar,
+                //Avatar = profile.Avatar,
                 MobilePhoneNumber = profile.MobilePhoneNumber,
                 BirthDate = profile.BirthDate,
                 BirthPlace = profile.BirthPlace,
