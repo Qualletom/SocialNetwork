@@ -29,17 +29,17 @@ namespace WEB.Controllers
         public ActionResult ShowUser(int id)
         {
 
-            UserModel userModel = _userService.GetUserById(id).ToUserModel();
-            InterestsModel interestsModel = userModel.Interests;
-            ProfileModel profileModel = userModel.Profile;
-            ProfileAboutModel profileAboutModel = new ProfileAboutModel(profileModel, interestsModel);
-            UserProfileModel userProfileModel = new UserProfileModel(userModel, profileAboutModel);
+            //UserModel userModel = _userService.GetUserById(id).ToUserModel();
+            //InterestsModel interestsModel = userModel.Interests;
+           // ProfileModel profileModel = userModel.Profile;
+           // ProfileAboutModel profileAboutModel = new ProfileAboutModel(profileModel, interestsModel);
+           // UserProfileModel userProfileModel = new UserProfileModel(userModel, profileAboutModel);
             //InterestsModel interestsModel = userProfileService.GetInterestsByUserId(id).ToWebInterests();
             //ProfileModel profileModel = userProfileService.GetProfileByUserId(id).ToWebProfile();
-
+            //ViewBag.url = "/Profile/UserProfile/";
             if (Request.IsAjaxRequest())
-                return PartialView("_UserPagePartial", userProfileModel);
-            return View("_UserPagePartial", userProfileModel);
+                return PartialView("_UserPagePartial");
+            return View("_UserPagePartial");
         }
 
         [HttpGet]
@@ -49,10 +49,9 @@ namespace WEB.Controllers
             InterestsModel interestsModel = _interestsService.GetInterestsByUserId(id).ToWebInterests();
             ProfileModel profileModel = _profileService.GetProfileByUserId(id).ToWebProfile();
             ProfileAboutModel profileAboutModel = new ProfileAboutModel(profileModel, interestsModel);
-
-            if (Request.IsAjaxRequest())
+            if (Request.IsAjaxRequest() || TempData["call"] != null)
                 return PartialView("_UserProfilePartial", profileAboutModel);
-            return View("_UserProfilePartial", profileAboutModel);
+            return View("_UserPagePartial");
         }
     }
 }

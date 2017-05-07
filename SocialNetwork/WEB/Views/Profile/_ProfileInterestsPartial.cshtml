@@ -7,7 +7,7 @@
     <div class="blockInfo__wideBody">
         @foreach (var property in ViewData.ModelMetadata.Properties)
         {
-            if (property.Model != null)
+            if (property.Model != null && property.PropertyName != "Id")
             {
                 <div class="wideBody__info">
                     <div class="info__label">

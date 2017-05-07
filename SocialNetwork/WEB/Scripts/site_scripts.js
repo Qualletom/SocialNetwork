@@ -24,6 +24,21 @@ function joinTabClick() {
             }
     )};
 
+function controllerAjax(url) {
+    $(document)
+    .ready(function () {
+
+        $.ajax({
+            url: url,
+            dataType: "html",
+            success: function (data) {
+                $("#userPage").html(data);
+            }
+        });
+    });
+    
+}
+
 var pushHistory = true;
 
 function profileMenuClick(href) {

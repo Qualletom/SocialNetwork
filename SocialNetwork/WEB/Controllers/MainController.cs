@@ -49,5 +49,12 @@ namespace WEB.Controllers
                 return PartialView("", profileAboutModel);
             return View("_UserProfilePartial", profileAboutModel);
         }
+
+        
+        public ActionResult LeftMenu(int id)
+        {
+            UserModel userModel = _userService.GetUserById(id).ToUserModel();
+            return PartialView("_LeftMenuPartial", userModel);
+        }
     }
 }
