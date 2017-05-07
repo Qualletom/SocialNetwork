@@ -12,7 +12,16 @@ namespace DAL.Entities
     {
         [Key]
         public int ProfileId { get; set; }
-        public string MobilePhoneNumber { get; set; }
+
+        public byte[] Avatar { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        public string MobilePhone { get; set; }
 
         [Column(TypeName = "Date")]
         public DateTime BirthDate { get; set; }

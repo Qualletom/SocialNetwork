@@ -300,7 +300,9 @@
     <Content Include="Views\Shared\_JoinLayout.cshtml" />
     <Content Include="Views\Profile\_UserPagePartial.cshtml" />
     <Content Include="Views\Profile\Settings\_ProfileSettings.cshtml" />
-    <Content Include="Views\Shared\_LeftMenuPartial.cshtml" />
+    <Content Include="Views\Shared\_UserMenuPartial.cshtml" />
+    <Content Include="Views\Profile\Settings\_PersonalInfoPartial.cshtml" />
+    <Content Include="Views\Profile\Settings\_HobbiesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

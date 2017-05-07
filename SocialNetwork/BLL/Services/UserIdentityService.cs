@@ -26,7 +26,7 @@ namespace BLL.Services
             Database.Dispose();
         }
 
-        public async Task<OperationDetails> Create(BllUser bllUser)
+        public async Task<OperationDetails> Create(BllRegisterUser bllUser)
         {
             ApplicationUser user = await Database.UserManager.FindByEmailAsync(bllUser.Email);
 
@@ -38,10 +38,11 @@ namespace BLL.Services
                 {
                     Email = bllUser.Email,
                     UserName = bllUser.Email,
-                    FirstName = bllUser.FirstName,
-                    LastName = bllUser.LastName,
+                    
                     Profile = new Profile()
                     {
+                        FirstName = bllUser.FirstName,
+                        LastName = bllUser.LastName,
                         Gender = (GenderEnum)bllUser.Gender
                     },
                     Interests = new Interests() { }

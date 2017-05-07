@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="DTO\BllInterest.cs" />
     <Compile Include="DTO\BllProfile.cs" />
+    <Compile Include="DTO\BllRegisterUser.cs" />
     <Compile Include="DTO\BllUser.cs" />
     <Compile Include="DTO\SexEnum.cs" />
     <Compile Include="DTO\UserDTO.cs" />

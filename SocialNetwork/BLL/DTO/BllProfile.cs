@@ -11,6 +11,8 @@ namespace BLL.DTO
     {
         public int Id { get; set; }
         public byte[] Avatar { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string MobilePhoneNumber { get; set; }
         public DateTime BirthDate { get; set; }
         public string BirthPlace { get; set; }

@@ -17,9 +17,9 @@ namespace BLL.Mappers
             ApplicationUser user = new ApplicationUser()
             {
                 Id = bllUser.Id,
-                LastName = bllUser.LastName,
-                FirstName = bllUser.FirstName,
-                Avatar = bllUser.Avatar,
+                //LastName = bllUser.LastName,
+                //FirstName = bllUser.FirstName,
+                //Avatar = bllUser.Avatar,
                 ProfileId = bllUser.ProfileId,
                 Profile = bllUser.BllProfile.ToDalProfile(),
                 InterestsId = bllUser.InterestsId,
@@ -35,9 +35,9 @@ namespace BLL.Mappers
             BllUser bllUser = new BllUser()
             {
                 Id = applicationUser.Id,
-                LastName = applicationUser.LastName,
-                FirstName = applicationUser.FirstName,
-                Avatar = applicationUser.Avatar,
+                //LastName = applicationUser.LastName,
+                //FirstName = applicationUser.FirstName,
+                //Avatar = applicationUser.Avatar,
                 ProfileId = applicationUser.ProfileId,
                 BllProfile = applicationUser.Profile.ToBllProfile(),
                 InterestsId = applicationUser.InterestsId,

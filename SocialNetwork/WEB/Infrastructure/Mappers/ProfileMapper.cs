@@ -13,6 +13,8 @@ namespace WEB.Infrastructure.Mappers
             {
                 Id = bllProfile.Id,
                 Avatar = bllProfile.Avatar,
+                LastName = bllProfile.LastName,
+                FirstName = bllProfile.FirstName,
                 MobilePhoneNumber = bllProfile.MobilePhoneNumber,
                 BirthDate = bllProfile.BirthDate,
                 BirthPlace = bllProfile.BirthPlace,
@@ -32,6 +34,8 @@ namespace WEB.Infrastructure.Mappers
             {
                 Id = profileModel.Id,
                 Avatar = profileModel.Avatar,
+                LastName = profileModel.LastName,
+                FirstName = profileModel.FirstName,
                 MobilePhoneNumber = profileModel.MobilePhoneNumber,
                 BirthDate = profileModel.BirthDate,
                 BirthPlace = profileModel.BirthPlace,

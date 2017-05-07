@@ -89,6 +89,14 @@
     <Compile Include="Migrations\201705061709585_MigrationDb.Designer.cs">
       <DependentUpon>201705061709585_MigrationDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705071055022_MigrationDb1.cs" />
+    <Compile Include="Migrations\201705071055022_MigrationDb1.Designer.cs">
+      <DependentUpon>201705071055022_MigrationDb1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705071128412_MigrationDb2.cs" />
+    <Compile Include="Migrations\201705071128412_MigrationDb2.Designer.cs">
+      <DependentUpon>201705071128412_MigrationDb2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientManager.cs" />
@@ -103,6 +111,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705061709585_MigrationDb.resx">
       <DependentUpon>201705061709585_MigrationDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071055022_MigrationDb1.resx">
+      <DependentUpon>201705071055022_MigrationDb1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705071128412_MigrationDb2.resx">
+      <DependentUpon>201705071128412_MigrationDb2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

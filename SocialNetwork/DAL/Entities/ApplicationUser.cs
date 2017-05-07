@@ -13,14 +13,6 @@ namespace DAL.Entities
 {
     public class ApplicationUser : IdentityUser<int,ApplicationUserLogin, ApplicationUserRole,ApplicationUserClaim>
     {
-        public byte[] Avatar { get; set; }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
-
         [Column(TypeName = "Date")]
         public DateTime Created { get; set; }
 

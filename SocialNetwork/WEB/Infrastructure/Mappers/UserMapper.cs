@@ -11,9 +11,9 @@ namespace WEB.Infrastructure.Mappers
 {
     public static class UserMapper
     {
-        public static BllUser ToBllUser(this RegisterModel registerModel)
+        public static BllRegisterUser ToBllRegisterUser(this RegisterModel registerModel)
         {
-            BllUser bllUser = new BllUser()
+            BllRegisterUser bllRegisterUser = new BllRegisterUser()
             {
                 Email = registerModel.Email,
                 Password = registerModel.Password,
@@ -22,7 +22,7 @@ namespace WEB.Infrastructure.Mappers
                 //Role = "user",
                 Gender = registerModel.Gender
             };
-            return bllUser;
+            return bllRegisterUser;
         }
 
         public static UserModel ToUserModel(this BllUser bllUser)
@@ -32,8 +32,8 @@ namespace WEB.Infrastructure.Mappers
             UserModel userModel = new UserModel()
             {
                 Id = bllUser.Id,
-                LastName = bllUser.LastName,
-                FirstName = bllUser.FirstName,
+                //LastName = bllUser.LastName,
+                //FirstName = bllUser.FirstName,
                 Avatar = bllUser.Avatar,
                 ProfileId = bllUser.ProfileId,
                 Profile = bllUser.BllProfile.ToWebProfile(),
@@ -42,5 +42,7 @@ namespace WEB.Infrastructure.Mappers
             };
             return userModel;
         }
+
+
     }
 }

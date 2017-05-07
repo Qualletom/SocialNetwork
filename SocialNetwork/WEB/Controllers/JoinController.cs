@@ -89,7 +89,7 @@ namespace WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                BllUser bllUser = model.ToBllUser();
+                BllRegisterUser bllUser = model.ToBllRegisterUser();
                 //UserDTO userDto = new UserDTO
                 //{
                 //    Email = model.Email,

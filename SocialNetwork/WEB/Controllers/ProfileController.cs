@@ -14,13 +14,11 @@ namespace WEB.Controllers
 {
     public class ProfileController : Controller
     {
-        private readonly IUserService _userService;
         private readonly IInterestsService _interestsService;
         private readonly IProfileService _profileService;
 
         public ProfileController(IUserService userService, IInterestsService interestsService, IProfileService profileService)
         {
-            this._userService = userService;
             this._interestsService = interestsService;
             this._profileService = profileService;
         }
@@ -28,15 +26,6 @@ namespace WEB.Controllers
         [HttpGet]
         public ActionResult ShowUser(int id)
         {
-
-            //UserModel userModel = _userService.GetUserById(id).ToUserModel();
-            //InterestsModel interestsModel = userModel.Interests;
-           // ProfileModel profileModel = userModel.Profile;
-           // ProfileAboutModel profileAboutModel = new ProfileAboutModel(profileModel, interestsModel);
-           // UserProfileModel userProfileModel = new UserProfileModel(userModel, profileAboutModel);
-            //InterestsModel interestsModel = userProfileService.GetInterestsByUserId(id).ToWebInterests();
-            //ProfileModel profileModel = userProfileService.GetProfileByUserId(id).ToWebProfile();
-            //ViewBag.url = "/Profile/UserProfile/";
             if (Request.IsAjaxRequest())
                 return PartialView("_UserPagePartial");
             return View("_UserPagePartial");
@@ -53,5 +42,8 @@ namespace WEB.Controllers
                 return PartialView("_UserProfilePartial", profileAboutModel);
             return View("_UserPagePartial");
         }
+
+        //[HttpGet]
+        //public ActionResult 
     }
 }

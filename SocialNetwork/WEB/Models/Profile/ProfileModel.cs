@@ -11,7 +11,13 @@ namespace WEB.Models.Profile
 
         [Required]
         public byte[] Avatar { get; set; }
-        public string MobilePhoneNumber { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+        public string MobilePhone { get; set; }
         public DateTime BirthDate { get; set; }
         public string BirthPlace { get; set; }
         public string Occupation { get; set; }

@@ -1,0 +1,18 @@
+﻿@model WEB.Models.User.UserModel
+<div class="container__header">
+    <div class="container__image">
+        <div></div>
+    </div>
+    <div class="container__profileMenu">
+        <ul>
+            @*<li>@Ajax.ActionLink("Диалоги", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>*@
+            <li>@Ajax.ActionLink("Друзья", "Index", new { Model.Id }, new AjaxOptions { UpdateTargetId = "userPage" })</li>
+            <li>"Алексей Кохонов"</li>
+            @*<li>@Ajax.ActionLink("Алексей Кохонов", "Index", new {Model.Id}, new AjaxOptions { UpdateTargetId = "test" })</li>*@
+            <li>@Ajax.ActionLink("Написать сообщение", "Index", "Join", new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccessJoin(this)" })</li>
+            <li>@Ajax.ActionLink("Фото", "Index", "Join", new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccessJoin(this)" })</li>
+            <li>@Ajax.ActionLink("Профиль", "UserProfile", "Profile", new { Model.Id }, new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccess(this)" })</li>
+        </ul>
+    </div>
+</div>
+

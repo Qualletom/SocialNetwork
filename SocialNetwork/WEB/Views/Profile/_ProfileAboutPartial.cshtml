@@ -8,7 +8,7 @@
        
         @foreach (var property in ViewData.ModelMetadata.Properties)
         {
-            if (property.Model != null && property.PropertyName != "Id")
+            if ( property.PropertyName != "Id")
             {
                 <div class="nawworBody__info">
                     <div class="nawworBody__info__label">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="nawworBody__info__description">
                         <span>
-                            @property.Model
+                            @(property.Model ??  "Не указано")
                         </span>
 
                     </div>
