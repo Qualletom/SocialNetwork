@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BLL.DTO;
+using BLL.Infrastructure;
 using BLL.Interfaces;
 using BLL.Mappers;
 using DAL.Interfaces;
@@ -26,6 +27,12 @@ namespace BLL.Services
         public BllProfile GetProfileByUserId(int id)
         {
             return _database.ProfileManager.Get(id).ToBllProfile();
+        }
+
+        public void UpdateProfile(BllProfile bllProfile)
+        {
+            _database.ProfileManager.Update(bllProfile.ToDalProfile());
+            _database.SaveAsync();
         }
     }
 }

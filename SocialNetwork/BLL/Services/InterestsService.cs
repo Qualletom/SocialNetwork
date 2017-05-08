@@ -23,6 +23,12 @@ namespace BLL.Services
             return _database.InterestsManager.Get(id).ToBllIneInterests();
         }
 
+        public void UpdateInterests(BllInterest bllInterest)
+        {
+            _database.InterestsManager.Update(bllInterest.ToDalIneInterests());
+            _database.SaveAsync();
+        }
+
         public void Dispose()
         {
             _database.Dispose();

@@ -1,0 +1,49 @@
+﻿<div class="container__settingsMenu">
+    <div class="settings__header">
+        <span>Настройки профиля</span>
+    </div>
+
+    <div class="settingsMenu__body">
+        <div class="settingsMenu__label">
+            @Ajax.ActionLink("Персональная информация","Personal","EditProfile",new AjaxOptions() {UpdateTargetId = "settingsUpdate"})
+        </div>
+
+
+        <div class="settingsMenu__label">
+            @Ajax.ActionLink("Хобби", "Hobbies", "EditProfile", new AjaxOptions() { UpdateTargetId = "settingsUpdate" })
+        </div>
+
+
+        <div class="settingsMenu__label">
+            <span>Settings 3</span>
+        </div>
+
+        <div class="settingsMenu__label">
+            <span>Settings 4</span>
+        </div>
+    </div>
+</div>
+
+<div class="container__settingsInfo" id="settingsUpdate">
+    @*@Html.Partial("_PersonalInfoPartial")*@
+    @Html.Action("Personal","EditProfile");*
+</div>
+    @*<div class="container__body" id="userPage">
+        @{
+            string action = "";
+            var values = ViewContext.RouteData.Values;
+            switch (values["controller"].ToString().ToLower())
+            {
+                case "profile":
+                    action = "UserProfile";
+                    break;
+            }
+            TempData["call"] = "notAjax";
+            @Html.Action(action, values["controller"].ToString(), new { id = values["id"] });
+        }
+
+        @* @Html.Action("UserProfile", "Profile", new { id = 2});*@
+        @* @Html.Partial("_UserProfilePartial", Model.ProfileAboutModel);*@
+    @*</div>*@
+
+

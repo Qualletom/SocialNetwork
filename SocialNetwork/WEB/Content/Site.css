@@ -386,3 +386,154 @@ input::placeholder{
 .join__complete:active {
     background: #ec3009;
 }
+
+
+/*CONTAINER_SETTINGS_START*/
+/*------------------------------------------------------------------------------*/
+
+
+.container__settingsMenu,
+.container__settingsInfo {
+    /*display: flex;
+    flex-direction: column;*/
+    background: white;
+    height: 10%;
+}
+
+.container__settingsMenu {
+    width: 17%;
+    min-width: 100px;
+    margin-right: 10px;
+}
+
+.container__settingsInfo {
+    width: 80%;
+}
+
+.settings__header {
+    display: flex;
+    align-items: center;
+    height:50px;    
+    border-bottom: 2px solid #edf2f6;
+}
+
+.settings__header span {
+    padding-left: 20px;
+}
+
+.settingsMenu__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsMenu__label {
+    padding:20px;
+    border-bottom: 1px solid #edf2f6;
+    cursor: pointer;
+}
+
+.settingsMenu__label::after{
+    content: '\203A';
+    float: right;
+}
+
+.settingsMenu__label:hover,
+.settingsMenu__label:active{
+    background: #f2f2f2;
+    border: 2px solid #e5e5e5;
+}
+
+.settingsInfo__body {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.settingsInfo__fields {
+    /*display: flex;*/
+    justify-content: flex-start;
+    padding: 20px 30px;    
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
+    flex-direction: row;
+    width: 50%;
+}
+
+.settingsInfo__fields input{
+    width:80%;
+    /*padding:3px 5px;*/
+    font-size: 12pt;
+    height: 50px;
+    padding: 5px 15px;
+    border: 1px solid #d9dbe6;
+    /*border-radius: 5%;*/
+    color: #646575;
+}
+
+.settingsInfo__fields input:focus {
+    border-color: orange;
+}
+
+.settingsInfo__fields label{
+    padding:5px 5px;
+    font-size: 10pt;
+    color: #90809a;
+}
+
+.settingsInfo__fields textarea{
+    width:80%;
+    /*max-width:80%;*/
+    /*padding:3px 5px;*/
+    font-size: 12pt;
+    height: 100px;
+    padding: 5px 15px;
+    border: 1px solid #d9dbe6;
+    /*border-radius: 5%;*/
+    color: #646575;
+    resize: none;
+}
+
+.settingsInfo__buttonCancel,
+.settingsInfo__buttonSave {
+    margin: 30px 30px 10px 30px;
+    width: 40%;
+    height: 50px;
+    /*background: #fe5f3a;*/
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.settingsInfo__buttonCancel {
+    background: #404257;
+}
+
+.settingsInfo__buttonSave {
+    background: #fe5f3a;
+}
+
+/*CONTAINER_SETTINGS_END*/
+/*------------------------------------------------------------------------------*/
+
+
+
+input.input-validation-error,
+textarea.input-validation-error,
+select.input-validation-error
+{
+    background: #FEF1EC;
+    border: 1px solid #CD0A0A;
+}
+
+input.valid
+{
+    border: 1px solid Green;
+}
+
+.successMessage {
+    display: flex;
+    width: 50%;
+    height: 40px;
+    padding-top: 10px;
+    border: 1px solid #AFD4A9;
+    color: black;
+}

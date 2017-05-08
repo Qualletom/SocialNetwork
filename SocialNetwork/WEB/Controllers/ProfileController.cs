@@ -17,7 +17,7 @@ namespace WEB.Controllers
         private readonly IInterestsService _interestsService;
         private readonly IProfileService _profileService;
 
-        public ProfileController(IUserService userService, IInterestsService interestsService, IProfileService profileService)
+        public ProfileController( IInterestsService interestsService, IProfileService profileService)
         {
             this._interestsService = interestsService;
             this._profileService = profileService;
@@ -33,11 +33,15 @@ namespace WEB.Controllers
 
         [HttpGet]
         public ActionResult UserProfile(int id)
+
         {
 
             InterestsModel interestsModel = _interestsService.GetInterestsByUserId(id).ToWebInterests();
             ProfileModel profileModel = _profileService.GetProfileByUserId(id).ToWebProfile();
             ProfileAboutModel profileAboutModel = new ProfileAboutModel(profileModel, interestsModel);
+            //if (Request.IsAjaxRequest() || TempData["call"] != null)
+            //    return PartialView("_UserProfilePartial", profileAboutModel);
+            //return View("_UserPagePartial");
             if (Request.IsAjaxRequest() || TempData["call"] != null)
                 return PartialView("_UserProfilePartial", profileAboutModel);
             return View("_UserPagePartial");

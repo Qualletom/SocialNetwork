@@ -24,7 +24,7 @@ namespace DAL.Entities
         public string MobilePhone { get; set; }
 
         [Column(TypeName = "Date")]
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
         public string BirthPlace { get; set; }
         public string Occupation { get; set; }

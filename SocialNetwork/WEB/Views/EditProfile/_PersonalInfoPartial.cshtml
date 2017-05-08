@@ -1,0 +1,74 @@
+﻿@model WEB.Models.Profile.ProfileModel
+
+<div class="container__settingsInfo">
+    <div class="settings__header">
+        <span>Персональная информация</span>
+    </div>
+    
+    @if (ViewData["Message"] != null)
+    {
+        <div class="successMessage">
+            <span>Профиль успешно обновлен</span>
+        </div>
+    }
+        
+
+    @using (Ajax.BeginForm("SavePersonal", "EditProfile", new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div class="settingsInfo__body">
+            <div class="settingsInfo__fields">
+                <div>
+                    <label>Имя<span class="field__required">*</span></label>
+                    <br />
+                    @Html.TextBoxFor(model => model.FirstName, new { placeholder = Html.DisplayNameFor(model => model.FirstName) })
+                </div>
+            </div>
+
+            <div class="settingsInfo__fields">
+                <label>Фамилия<span class="field__required">*</span></label>
+                <br />
+                @Html.TextBoxFor(model => model.LastName, new { placeholder = Html.DisplayNameFor(model => model.LastName) })
+            </div>
+            <div class="settingsInfo__fields">
+                <label>Дата рождения</label>
+                <br />
+                @Html.TextBoxFor(model => model.BirthDate, "{0:yyyy/MM/dd}", new { id = "datepicker", placeholder = Html.DisplayNameFor(model => model.BirthDate) })
+            </div>
+            
+            <div class="settingsInfo__fields">
+                <div>
+                    <label>Родной город</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.BirthPlace, new { placeholder = Html.DisplayNameFor(model => model.BirthPlace) })
+                </div>
+            </div>
+
+            <div class="settingsInfo__fields">
+                <div>
+                    <label>Должность</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.Occupation, new { placeholder = Html.DisplayNameFor(model => model.Occupation) })
+                </div>
+            </div>
+
+            <div class="settingsInfo__fields">
+                <label>Пол<span class="field__required">*</span></label>
+                @Html.EnumDropDownListFor(model => model.Gender)
+            </div>
+
+            <div class="settingsInfo__fields">
+                <div>
+                    <label>О себе</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.About, new { placeholder = Html.DisplayNameFor(model => model.About) })
+                </div>
+            </div>
+
+        </div>
+        <input class="settingsInfo__buttonSave" type="submit" value="Сохранить изменения" />
+    }
+
+
+</div>

@@ -9,21 +9,35 @@ namespace WEB.Models.Profile
 
         public int Id { get; set; }
 
-        [Required]
         public byte[] Avatar { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Поле Имя не может быть пустым") ]
+        [Display(Name = "Имя")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Поле Фамилия не может быть пустым")]
+        [Display(Name = "Фамилия")]
         public string LastName { get; set; }
+
+        [Display(Name = "Мобильный телефон")]
         public string MobilePhone { get; set; }
-        public DateTime BirthDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+        [Display(Name = "Дата рождения")]
+        public DateTime? BirthDate { get; set; }
+
+        [Display(Name = "Родной город")]
         public string BirthPlace { get; set; }
+
+        [Display(Name = "Должность")]
         public string Occupation { get; set; }
+
         [Required]
         public GenderEnum Gender { get; set; }
         //public string Status { get; set; }
+
+        [Display(Name = "Кратко о себе")]
         public string About { get; set; }
     }
 }

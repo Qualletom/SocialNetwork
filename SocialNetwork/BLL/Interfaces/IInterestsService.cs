@@ -10,5 +10,6 @@ namespace BLL.Interfaces
     public interface IInterestsService : IDisposable
     {
         BllInterest GetInterestsByUserId(int id);
+        void UpdateInterests(BllInterest bllInterest);
     }
 }

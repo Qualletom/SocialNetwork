@@ -14,7 +14,7 @@ namespace BLL.DTO
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MobilePhoneNumber { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public string BirthPlace { get; set; }
         public string Occupation { get; set; }
         public GenderEnum Gender { get; set; }

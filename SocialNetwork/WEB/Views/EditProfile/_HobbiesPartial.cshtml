@@ -1,0 +1,68 @@
+﻿@model WEB.Models.Profile.InterestsModel
+
+<div class="settings__header">
+    <span>Хобби</span>
+</div>
+
+@if (ViewData["Message"] != null)
+{
+    <div class="successMessage">
+        <span>Профиль успешно обновлен</span>
+    </div>
+}
+
+@using (Ajax.BeginForm("SaveHobbies", "EditProfile", new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="settingsInfo__body">
+        <div class="settingsInfo__fields">
+            <label>Хобби</label>
+            <br />
+            @Html.TextAreaFor(model => model.Hobbies)
+        </div>
+
+        <div class="settingsInfo__fields">
+            <label>ТВ-шоу</label>
+            <br />
+            @Html.TextAreaFor(model => model.TvShows)
+        </div>
+
+        <div class="settingsInfo__fields">
+            <label>Фильмы</label>
+            <br />
+            @Html.TextAreaFor(model => model.Movies)
+        </div>
+
+        <div class="settingsInfo__fields">
+            <label>Книги</label>
+            <br />
+            @Html.TextAreaFor(model => model.Books)
+        </div>
+
+        <div class="settingsInfo__fields">
+            <label>Музыка</label>
+            <br />
+            @Html.TextAreaFor(model => model.Bands)
+        </div>
+
+        <div class="settingsInfo__fields">
+            <label>Игры</label>
+            <br />
+            @Html.TextAreaFor(model => model.Games)
+        </div>
+        
+        <div class="settingsInfo__fields">
+            <label>Цитаты</label>
+            <br />
+            @Html.TextAreaFor(model => model.Writers)
+        </div>
+        
+        <div class="settingsInfo__fields">
+            <label>Другое</label>
+            <br />
+            @Html.TextAreaFor(model => model.Other)
+        </div>
+    </div>
+        <input class="settingsInfo__buttonSave" type="submit" value="Сохранить изменения" />
+}
