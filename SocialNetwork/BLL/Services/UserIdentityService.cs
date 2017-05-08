@@ -10,6 +10,7 @@ using BLL.Interfaces;
 using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.AspNet.Identity;
+using Ninject.Activation;
 
 namespace BLL.Services
 {
@@ -79,6 +80,8 @@ namespace BLL.Services
             {
                 claim =
                     await Database.UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+                claim.AddClaim(new Claim(ClaimTypes.Sid, user.Id.ToString()));
+                claim.AddClaim(new Claim("FirstName", user.Profile.FirstName));
             }
             return claim;
         }
