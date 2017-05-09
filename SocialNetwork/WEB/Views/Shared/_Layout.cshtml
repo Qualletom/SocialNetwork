@@ -1,5 +1,6 @@
 ﻿@using System.Security.Claims
 @using Microsoft.AspNet.Identity
+@using WEB.Infrastructure.Extensions
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,6 @@
             <!--<div class="header__logo">
                 <img src="#" alt="logo">
             </div>-->
-            <span class="header__title"> PROFILE PAGE</span>
 
             <form class="header__search" action="">
                 <input type="text" placeholder="Поиск людей...">
@@ -30,36 +30,42 @@
                     <li>Регистрация</li>
                 </ul>
             </div>-->
-
+            @if (Request.IsAuthenticated)
+            {
+                
+            }
             <div class="header__profile">
                 <img src="#" alt="profile">
-                @(((ClaimsIdentity)User.Identity).FindFirst("FirstName").Value)
-                <span>Алексей</span>
+                @User.GetFullName()
+                @*<span>Алексей</span>*@
             </div>
         </div>
 
 
     </header>
 
-    <div class="globalContainter">
+<div class="globalContainter">
+    
+    @if (Request.IsAuthenticated)
+    {
         <div class="globalContainer__leftMenu">
-            
-            <ul>
-                <li>@Html.ActionLink("Профиль", "ShowUser", "Profile",null, new {id = 2/*User.Identity.GetUserId()*/})</li>
-                <li>@Ajax.ActionLink("Редактировать", "Edit", "EditProfile", new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccessJoin(this)" })</li>
-                @*<li>@Html.ActionLink("Редактировать", "Edit", "EditProfile", null, new { id = 2/*User.Identity.GetUserId()*/})</li>*@
-                @*<li>@Ajax.ActionLink("Диалоги", "Index", new AjaxOptions {UpdateTargetId = "test"})</li>*@
-                <li>@Ajax.ActionLink("Друзья", "Index", new AjaxOptions {UpdateTargetId = "test"})</li>
-                <li>@Ajax.ActionLink("Фото", "Index", "Join", new AjaxOptions {UpdateTargetId = "test", OnSuccess = "onSuccessJoin(this)"})</li>
-            </ul>
-            
-        </div>
 
-        <div class="container" id="profile">
-            @RenderBody()
+            <ul>
+                <li>@Html.ActionLink("Профиль", "ShowUser", "Profile", new { id = User.Identity.GetUserId()}, null)</li>
+                <li>@Ajax.ActionLink("Редактировать", "Edit", "EditProfile", new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccessJoin(this)" })</li>
+                <li>@Ajax.ActionLink("Друзья", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
+                <li>@Ajax.ActionLink("Фото", "Index", "Join", new AjaxOptions { UpdateTargetId = "test", OnSuccess = "onSuccessJoin(this)" })</li>
+            </ul>
+
         </div>
+    }
+    
+
+    <div class="container" id="profile">
+        @RenderBody()
+    </div>
     <div class="container body-content">
-        <hr />
+        <hr/>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
@@ -68,6 +74,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/siteJs")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)</div>
+    @RenderSection("scripts", required: false)
+</div>
 </body>
 </html>

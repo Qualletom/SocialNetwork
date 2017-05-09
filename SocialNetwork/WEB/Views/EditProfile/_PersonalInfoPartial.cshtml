@@ -13,43 +13,46 @@
     }
         
 
-    @using (Ajax.BeginForm("SavePersonal", "EditProfile", new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
+    @using (Ajax.BeginForm("SavePersonal", "EditProfile", new {Id = Model?.Id ?? 0}, new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary()
         <div class="settingsInfo__body">
+
+                @*<span hidden>@Html.TextBoxFor(model => model.Id, new { placeholder = Html.DisplayNameFor(model => model.FirstName) })</span>*@
+
             <div class="settingsInfo__fields">
                 <div>
                     <label>Имя<span class="field__required">*</span></label>
-                    <br />
-                    @Html.TextBoxFor(model => model.FirstName, new { placeholder = Html.DisplayNameFor(model => model.FirstName) })
+                    <br/>
+                    @Html.TextBoxFor(model => model.FirstName, new {placeholder = Html.DisplayNameFor(model => model.FirstName)})
                 </div>
             </div>
 
             <div class="settingsInfo__fields">
                 <label>Фамилия<span class="field__required">*</span></label>
-                <br />
-                @Html.TextBoxFor(model => model.LastName, new { placeholder = Html.DisplayNameFor(model => model.LastName) })
+                <br/>
+                @Html.TextBoxFor(model => model.LastName, new {placeholder = Html.DisplayNameFor(model => model.LastName)})
             </div>
             <div class="settingsInfo__fields">
                 <label>Дата рождения</label>
-                <br />
-                @Html.TextBoxFor(model => model.BirthDate, "{0:yyyy/MM/dd}", new { id = "datepicker", placeholder = Html.DisplayNameFor(model => model.BirthDate) })
+                <br/>
+                @Html.TextBoxFor(model => model.BirthDate, "{0:yyyy/MM/dd}", new {id = "datepicker", placeholder = Html.DisplayNameFor(model => model.BirthDate)})
             </div>
-            
+
             <div class="settingsInfo__fields">
                 <div>
                     <label>Родной город</label>
-                    <br />
-                    @Html.TextBoxFor(model => model.BirthPlace, new { placeholder = Html.DisplayNameFor(model => model.BirthPlace) })
+                    <br/>
+                    @Html.TextBoxFor(model => model.BirthPlace, new {placeholder = Html.DisplayNameFor(model => model.BirthPlace)})
                 </div>
             </div>
 
             <div class="settingsInfo__fields">
                 <div>
                     <label>Должность</label>
-                    <br />
-                    @Html.TextBoxFor(model => model.Occupation, new { placeholder = Html.DisplayNameFor(model => model.Occupation) })
+                    <br/>
+                    @Html.TextBoxFor(model => model.Occupation, new {placeholder = Html.DisplayNameFor(model => model.Occupation)})
                 </div>
             </div>
 
@@ -61,8 +64,8 @@
             <div class="settingsInfo__fields">
                 <div>
                     <label>О себе</label>
-                    <br />
-                    @Html.TextBoxFor(model => model.About, new { placeholder = Html.DisplayNameFor(model => model.About) })
+                    <br/>
+                    @Html.TextBoxFor(model => model.About, new {placeholder = Html.DisplayNameFor(model => model.About)})
                 </div>
             </div>
 

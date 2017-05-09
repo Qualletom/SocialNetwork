@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BLL.Interfaces;
+using Microsoft.AspNet.Identity;
 using WEB.Infrastructure.Mappers;
 using WEB.Models;
 using WEB.Models.CombinedModels;
@@ -24,8 +25,18 @@ namespace WEB.Controllers
         }
 
         [HttpGet]
-        public ActionResult ShowUser(int id)
+        public ActionResult ShowUser(int? id)
         {
+            if (id == null)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    id = Convert.ToInt32(User.Identity.GetUserId());
+                    RouteData.Values["id"] = id;
+                }
+                else
+                    return RedirectToAction("Login", "Join");
+            }
             if (Request.IsAjaxRequest())
                 return PartialView("_UserPagePartial");
             return View("_UserPagePartial");

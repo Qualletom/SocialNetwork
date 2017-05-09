@@ -11,7 +11,7 @@
     </div>
 }
 
-@using (Ajax.BeginForm("SaveHobbies", "EditProfile", new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
+@using (Ajax.BeginForm("SaveHobbies", "EditProfile", new { Id = Model?.Id ?? 0 }, new AjaxOptions() { UpdateTargetId = "settingsUpdate" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()

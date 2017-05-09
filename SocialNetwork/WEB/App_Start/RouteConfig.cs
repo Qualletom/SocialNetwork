@@ -17,7 +17,7 @@ namespace WEB
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Profile", action = "ShowUser", id = 2}//HttpContext.Current.User.Identity.GetUserId() }
+                defaults: new { controller = "Profile", action = "ShowUser", id = UrlParameter.Optional } 
             );
 
             //routes.MapRoute(

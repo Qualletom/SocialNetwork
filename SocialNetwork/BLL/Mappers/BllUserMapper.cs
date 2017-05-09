@@ -35,13 +35,13 @@ namespace BLL.Mappers
             BllUser bllUser = new BllUser()
             {
                 Id = applicationUser.Id,
-                //LastName = applicationUser.LastName,
-                //FirstName = applicationUser.FirstName,
+                LastName = applicationUser.Profile.LastName,
+                FirstName = applicationUser.Profile.FirstName,
                 //Avatar = applicationUser.Avatar,
                 ProfileId = applicationUser.ProfileId,
-                BllProfile = applicationUser.Profile.ToBllProfile(),
+              //  BllProfile = applicationUser.Profile.ToBllProfile(),
                 InterestsId = applicationUser.InterestsId,
-                BllInterest = applicationUser.Interests.ToBllIneInterests(),
+              //  BllInterest = applicationUser.Interests.ToBllIneInterests(),
             };
             return bllUser;
         }

@@ -1,6 +1,7 @@
-﻿@*@model WEB.Models.CombinedModels.UserProfileModel*@
+﻿@Html.Action("LeftMenu", "Main", new { id = ViewContext.RouteData.Values["id"] })
 
-@Html.Action("LeftMenu","Main",new {id = ViewContext.RouteData.Values["id"] })
+
+
 
 <div class="container__body" id="userPage">
     @{
@@ -17,8 +18,9 @@
                 break;
         }
         TempData["call"] = "notAjax";
+        TempData["id"] = values["id"];
                 @Html.Action(action, values["controller"].ToString(), new { id = values["id"] });
-            }
+    }
 
     @* @Html.Action("UserProfile", "Profile", new { id = 2});*@
     @* @Html.Partial("_UserProfilePartial", Model.ProfileAboutModel);*@

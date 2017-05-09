@@ -15,6 +15,7 @@ using WEB.Models.Profile;
 
 namespace WEB.Controllers
 {
+    [Authentificate]
     public class EditProfileController : Controller
     {
         private readonly IProfileService _profileService;
@@ -29,6 +30,7 @@ namespace WEB.Controllers
         [HttpGet]
         public ActionResult Edit()
         {
+            RouteData.Values["id"] = User.Identity.GetUserId();
             if (Request.IsAjaxRequest() || TempData["call"] != null)
                 return PartialView("_ProfileMenuSettings");
             return View("_UserPagePartial");
@@ -38,7 +40,7 @@ namespace WEB.Controllers
         public ActionResult Personal()
         {
             int userId = Convert.ToInt32(User.Identity.GetUserId());
-            ProfileModel profileModel = _profileService.GetProfileByUserId(3).ToWebProfile();
+            ProfileModel profileModel = _profileService.GetProfileByUserId(userId).ToWebProfile();
             return PartialView("_PersonalInfoPartial", profileModel);
         }
 

@@ -26,8 +26,8 @@ namespace WEB.Controllers
         
         public ActionResult LeftMenu(int id)
         {
-            UserModel userModel = _userService.GetUserById(id).ToUserModel();
-            return PartialView("_UserMenuPartial", userModel);
+            UserHeadViewModel userHeadViewModel = _userService.GetUserById(id).ToUserHeadModel();
+            return PartialView("_UserMenuPartial", userHeadViewModel);
         }
     }
 }

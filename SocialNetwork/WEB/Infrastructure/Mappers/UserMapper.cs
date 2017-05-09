@@ -43,6 +43,22 @@ namespace WEB.Infrastructure.Mappers
             return userModel;
         }
 
+        public static UserHeadViewModel ToUserHeadModel(this BllUser bllUser)
+        {
+            if (bllUser == null)
+                return null;
+            UserHeadViewModel userHeadViewModel = new UserHeadViewModel()
+            {
+                Id = bllUser.Id,
+                //LastName = bllUser.LastName,
+                //FirstName = bllUser.FirstName,
+                Avatar = bllUser.Avatar,
+                FirstName = bllUser.FirstName,
+                LastName = bllUser.FirstName
+            };
+            return userHeadViewModel;
+        }
+
 
     }
 }
