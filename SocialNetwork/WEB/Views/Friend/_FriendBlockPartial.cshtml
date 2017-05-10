@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WEB.Models.Profile.ProfileModel>
+
+<div class="globalContainer__friends">
+
+    @foreach (var profile in Model)
+    {
+        <div class="container__friends">
+
+            <div class="header__friends">
+                <div class="miniature">
+                    <img />
+                </div>
+            </div>
+
+            <div class="content__friends">
+
+                <div class="info__friends">
+                    @Html.ActionLink(profile.FullName,"ShowUser","Profile", new {id = profile.Id}, null)
+                    @*<span id="main">@profile.FirstName @profile.LastName</span>*@
+                    <br/>
+                </div>
+
+                <div class="bar_friends">
+                    <ul>
+                        <li>
+                            <span id="main">@Model.Count()</span>
+                            <br />
+                            <span id="secondary"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="net_fantazii">
+                    <button class="messege__friends"><img class="icon-mes" src="~/Content/icons/Send_message.png" /></button>
+                </div>
+
+            </div>
+
+        </div>
+    }
+        
+
+    @*<div class="friends__lastEmptyDiv"></div>*@
+
+</div>

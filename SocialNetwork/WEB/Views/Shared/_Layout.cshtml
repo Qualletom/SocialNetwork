@@ -52,7 +52,7 @@
 
             <ul>
                 <li>@Html.ActionLink("Профиль", "ShowUser", "Profile", new { id = User.Identity.GetUserId()}, null)</li>
-                <li>@Ajax.ActionLink("Редактировать", "Edit", "EditProfile", new AjaxOptions { UpdateTargetId = "userPage", OnSuccess = "onSuccessJoin(this)" })</li>
+                <li>@Ajax.ActionLink("Редактировать", "Edit", "EditProfile", new AjaxOptions { UpdateTargetId = "profile", OnSuccess = "onSuccessJoin(this)" })</li>
                 <li>@Ajax.ActionLink("Друзья", "Index", new AjaxOptions { UpdateTargetId = "test" })</li>
                 <li>@Ajax.ActionLink("Фото", "Index", "Join", new AjaxOptions { UpdateTargetId = "test", OnSuccess = "onSuccessJoin(this)" })</li>
             </ul>

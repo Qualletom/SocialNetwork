@@ -16,6 +16,7 @@ namespace DAL.Interfaces
         IClientManager ClientManager { get; }
         IProfileManager ProfileManager { get; }
         IInterestsManager InterestsManager { get; }
+        IFriendManager FriendManager { get; }
         Task SaveAsync();
     }
 }

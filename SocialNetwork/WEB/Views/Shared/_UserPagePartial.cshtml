@@ -1,4 +1,5 @@
-﻿@Html.Action("LeftMenu", "Main", new { id = ViewContext.RouteData.Values["id"] })
+﻿@using WEB.Infrastructure.Extensions
+@Html.Action("LeftMenu", "Main",ViewContext.RouteData.IdRouteValue())
 
 
 
@@ -16,10 +17,13 @@
             case "editprofile":
                 action = "Edit";
                 break;
+            case "friend":
+                action = "Friends";
+                break;
         }
         TempData["call"] = "notAjax";
         TempData["id"] = values["id"];
-                @Html.Action(action, values["controller"].ToString(), new { id = values["id"] });
+        @Html.Action(action, values["controller"].ToString(), ViewContext.RouteData.IdRouteValue());
     }
 
     @* @Html.Action("UserProfile", "Profile", new { id = 2});*@

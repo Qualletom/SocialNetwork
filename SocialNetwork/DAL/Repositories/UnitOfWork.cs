@@ -23,12 +23,14 @@ namespace DAL.Repositories
             ClientManager = new ClientManager(_applicationContext);
             ProfileManager = new ProfileManager(_applicationContext);
             InterestsManager = new InterestsManager(_applicationContext);
+            FriendManager = new FriendManager(_applicationContext);
         }
         public ApplicationRoleManager RoleManager { get; }
         public ApplicationUserManager UserManager { get; }
         public IClientManager ClientManager { get; }
         public IProfileManager ProfileManager { get; set; }
         public IInterestsManager InterestsManager { get; }
+        public IFriendManager FriendManager { get; set; }
 
         public async Task SaveAsync()
         {

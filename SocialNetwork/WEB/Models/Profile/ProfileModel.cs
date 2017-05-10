@@ -6,7 +6,6 @@ namespace WEB.Models.Profile
 {
     public class ProfileModel
     {
-
         public int Id { get; set; }
 
         public byte[] Avatar { get; set; }
@@ -39,5 +38,7 @@ namespace WEB.Models.Profile
 
         [Display(Name = "Кратко о себе")]
         public string About { get; set; }
+
+        public string FullName => FirstName + " " + LastName;
     }
 }

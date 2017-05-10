@@ -137,6 +137,14 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -215,6 +223,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\EditProfileController.cs" />
+    <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JoinController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -226,10 +235,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Extensions\PrincipalExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\RouteDataExtensions.cs" />
     <Compile Include="Infrastructure\Mappers\InterestMapper.cs" />
     <Compile Include="Infrastructure\Mappers\ProfileMapper.cs" />
     <Compile Include="Infrastructure\Mappers\UserMapper.cs" />
     <Compile Include="Models\CombinedModels\UserProfileModel.cs" />
+    <Compile Include="Models\FriendsModel.cs" />
     <Compile Include="Models\Profile\ProfileModel.cs" />
     <Compile Include="Models\CombinedModels\ProfileAboutModel.cs" />
     <Compile Include="Models\Profile\InterestsModel.cs" />
@@ -243,7 +254,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Icons\Send_message.png" />
     <Content Include="Content\Join.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -351,6 +364,7 @@
     <Content Include="Views\Shared\_UserMenuPartial.cshtml" />
     <Content Include="Views\EditProfile\_PersonalInfoPartial.cshtml" />
     <Content Include="Views\EditProfile\_HobbiesPartial.cshtml" />
+    <Content Include="Views\Friend\_FriendBlockPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

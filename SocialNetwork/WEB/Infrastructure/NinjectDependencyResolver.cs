@@ -31,6 +31,7 @@ namespace WEB.Util
             _kernel.Bind<IInterestsService>().To<InterestsService>();
             _kernel.Bind<IProfileService>().To<ProfileService>();
             _kernel.Bind<IUserService>().To<UserService>();
+            _kernel.Bind<IFriedService>().To<FriendService>();
         }
     }
 }

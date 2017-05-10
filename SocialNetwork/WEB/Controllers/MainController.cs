@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 using BLL.Interfaces;
+using Microsoft.AspNet.Identity;
 using WEB.Infrastructure.Mappers;
 using WEB.Models.CombinedModels;
 using WEB.Models.User;
@@ -24,9 +26,11 @@ namespace WEB.Controllers
             this._profileService = profileService;
         }
         
-        public ActionResult LeftMenu(int id)
+        public ActionResult LeftMenu(int? id)
         {
-            UserHeadViewModel userHeadViewModel = _userService.GetUserById(id).ToUserHeadModel();
+            int userId = id ?? User.Identity.GetUserId().AsInt();
+            //int id = RouteData.Values["id"]?.ToString().AsInt() ?? User.Identity.GetUserId().AsInt();
+            UserHeadViewModel userHeadViewModel = _userService.GetUserById(userId).ToUserHeadModel();
             return PartialView("_UserMenuPartial", userHeadViewModel);
         }
     }

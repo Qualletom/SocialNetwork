@@ -34,5 +34,20 @@ namespace BLL.Services
             _database.ProfileManager.Update(bllProfile.ToDalProfile());
             _database.SaveAsync();
         }
+
+        public List<BllProfile> GetConfirmedFriendsProfiles(int id)
+        {
+            var friends = _database.FriendManager.GetFriends(id, true);
+            List<BllProfile> friendsProfiles = new List<BllProfile>();
+
+            foreach (var friend in friends)
+            {
+                if (id == friend.UserFromId)
+                    friendsProfiles.Add(friend.FromUser.Profile.ToBllProfile());
+                else
+                    friendsProfiles.Add(friend.ToUser.Profile.ToBllProfile());
+            }
+            return friendsProfiles;
+        }
     }
 }

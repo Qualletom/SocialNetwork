@@ -13,5 +13,7 @@ namespace BLL.Interfaces
         BllProfile GetProfileByUserId(int id);
 
         void UpdateProfile(BllProfile bllProfile);
+
+        List<BllProfile> GetConfirmedFriendsProfiles(int id);
     }
 }

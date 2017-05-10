@@ -86,3 +86,7 @@ D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.config
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.dll
 D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\NLog.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\PagedList.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\PagedList.Mvc.dll
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\PagedList.xml
+D:\Programs\OneDrive\Education\ASP.NET\CourseProject_semestr_6\SocialNetwork\WEB\bin\PagedList.Mvc.xml

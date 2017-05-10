@@ -30,9 +30,11 @@ namespace WEB.Controllers
         [HttpGet]
         public ActionResult Edit()
         {
-            RouteData.Values["id"] = User.Identity.GetUserId();
-            if (Request.IsAjaxRequest() || TempData["call"] != null)
+            RouteData.Values["id"] = null;
+            if (TempData["call"] != null)
                 return PartialView("_ProfileMenuSettings");
+            if (Request.IsAjaxRequest())
+                return PartialView("_UserPagePartial");
             return View("_UserPagePartial");
         }
 

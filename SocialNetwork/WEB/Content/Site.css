@@ -515,6 +515,102 @@ input::placeholder{
 /*CONTAINER_SETTINGS_END*/
 /*------------------------------------------------------------------------------*/
 
+/*CONTAINER_FRIENDS_BEGIN*/
+/*------------------------------------------------------------------------------*/
+
+.friends__lastEmptyDiv {
+    flex-grow: 1;
+}
+
+
+.globalContainer__friends{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    margin: 0 -2% 0 -1%;
+
+}
+
+.container__friends{
+    width: 200px;
+    height: 250px;
+    background:white;
+    /*border: 1px solid black;*/
+    margin: 0 2% 20px;
+}
+
+.header__friends{
+    height:90px;
+    background-color: orange;
+    display:flex;
+    justify-content:center;
+
+}
+
+.miniature{
+    width: 80px;
+    height: 80px;
+    border: 5px solid white;
+    background-color:gainsboro;
+    /*transform: translateY(100%);*/
+    margin-top:50px;
+    border-radius: 50%;
+}
+
+.content__friends{
+    display:flex;
+    flex-direction:column;
+    margin-top: 50px;
+    /*justify-content:center;*/
+
+}
+
+.info__friends{
+    text-align:center;
+
+}
+
+span#main{
+    font-weight:600;
+    font-size: 14px;
+    cursor:pointer;
+}
+
+span#secondary{
+    color: #90809a;
+}
+
+.bar_friends{
+    text-align:center;
+}
+
+
+.bar_friends ul{
+    display: flex;
+    list-style-type: none; 
+    justify-content: space-between;
+    padding:0 30px;
+}
+
+.net_fantazii{
+    text-align:center;
+}
+
+.messege__friends{
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.icon-mes{
+    width:30px;
+    height:30px;
+}
+
+/*CONTAINER_FRIENDS_END*/
+/*------------------------------------------------------------------------------*/
+
+
 
 
 input.input-validation-error,

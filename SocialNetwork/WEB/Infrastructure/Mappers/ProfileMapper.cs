@@ -1,4 +1,5 @@
-﻿using BLL.DTO;
+﻿using System.Collections.Generic;
+using BLL.DTO;
 using WEB.Models.Profile;
 
 namespace WEB.Infrastructure.Mappers
@@ -46,5 +47,17 @@ namespace WEB.Infrastructure.Mappers
             };
             return bllProfile;
         }
+
+        public static List<ProfileModel> ToWebProfileList(this List<BllProfile> bllProfiles)
+        {
+            List<ProfileModel> profileModels = new List<ProfileModel>();
+            foreach (var bllProfile in bllProfiles)
+            {
+                profileModels.Add(bllProfile.ToWebProfile());
+            }
+            return profileModels;
+        }
+
+
     }
 }
