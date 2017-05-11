@@ -17,6 +17,8 @@ namespace DAL.Interfaces
         IProfileManager ProfileManager { get; }
         IInterestsManager InterestsManager { get; }
         IFriendManager FriendManager { get; }
+        IConversationManager ConversationManager { get; }
+        IMessageManager MessageManager { get; }
         Task SaveAsync();
     }
 }

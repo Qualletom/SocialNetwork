@@ -222,6 +222,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\ConversationsController.cs" />
     <Compile Include="Controllers\EditProfileController.cs" />
     <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -235,7 +236,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Extensions\PrincipalExtensions.cs" />
-    <Compile Include="Infrastructure\Extensions\RouteDataExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\UrlExtensions.cs" />
     <Compile Include="Infrastructure\Mappers\InterestMapper.cs" />
     <Compile Include="Infrastructure\Mappers\ProfileMapper.cs" />
     <Compile Include="Infrastructure\Mappers\UserMapper.cs" />
@@ -365,6 +366,8 @@
     <Content Include="Views\EditProfile\_PersonalInfoPartial.cshtml" />
     <Content Include="Views\EditProfile\_HobbiesPartial.cshtml" />
     <Content Include="Views\Friend\_FriendBlockPartial.cshtml" />
+    <Content Include="Views\Conversations\_ConversationsPartial.cshtml" />
+    <Content Include="Views\Conversations\_MessagesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,6 +375,7 @@
     <Folder Include="Util\" />
     <Folder Include="Views\Main\" />
     <Folder Include="Views\Profile\Settings\" />
+    <Folder Include="Views\Сщтмукыфешщты\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

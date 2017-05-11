@@ -24,6 +24,8 @@ namespace DAL.Repositories
             ProfileManager = new ProfileManager(_applicationContext);
             InterestsManager = new InterestsManager(_applicationContext);
             FriendManager = new FriendManager(_applicationContext);
+            ConversationManager = new ConversationManager(_applicationContext);
+            MessageManager = new MessageManager(_applicationContext);
         }
         public ApplicationRoleManager RoleManager { get; }
         public ApplicationUserManager UserManager { get; }
@@ -31,6 +33,8 @@ namespace DAL.Repositories
         public IProfileManager ProfileManager { get; set; }
         public IInterestsManager InterestsManager { get; }
         public IFriendManager FriendManager { get; set; }
+        public IConversationManager ConversationManager { get; }
+        public IMessageManager MessageManager { get; }
 
         public async Task SaveAsync()
         {

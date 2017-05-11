@@ -15,6 +15,8 @@ namespace DAL.EF
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Interests> Interests { get; set; }
         public DbSet<Friend> Friends { get; set; }
+        public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Message> Messages { get; set; }
         public ApplicationContext(string connectionString) : base(connectionString)
         {
 

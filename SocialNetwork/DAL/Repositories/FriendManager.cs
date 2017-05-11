@@ -56,5 +56,12 @@ namespace DAL.Repositories
                 .Where(friend => (friend.UserFromId == id || friend.UserToId == id) && friend.IsConfirmed == true)
                 .ToList();
         }
+
+        public IEnumerable<Friend> GetNotConfirmedFriends(int userId)
+        {
+            return _applicationContext.Friends
+                .Where(friend => friend.UserToId == userId && friend.IsConfirmed == false)
+                .ToList();
+        }
     }
 }

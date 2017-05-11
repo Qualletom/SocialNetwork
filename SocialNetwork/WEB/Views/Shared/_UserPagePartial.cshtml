@@ -7,24 +7,27 @@
 <div class="container__body" id="userPage">
     @{
 
-        string action = "";
-        var values = ViewContext.RouteData.Values;
-        switch (values["controller"].ToString().ToLower())
-        {
-            case "profile":
-                action = "UserProfile";
-                break;
-            case "editprofile":
-                action = "Edit";
-                break;
-            case "friend":
-                action = "Friends";
-                break;
-        }
-        TempData["call"] = "notAjax";
-        TempData["id"] = values["id"];
-        @Html.Action(action, values["controller"].ToString(), ViewContext.RouteData.IdRouteValue());
-    }
+                string action = "";
+                var values = ViewContext.RouteData.Values;
+                switch (values["controller"].ToString().ToLower())
+                {
+                    case "profile":
+                        action = "UserProfile";
+                        break;
+                    case "editprofile":
+                        action = "Edit";
+                        break;
+                    case "friend":
+                        action = "Friends";
+                        break;
+                    case "conversations":
+                        action = "conversations";
+                        break;
+                }
+                TempData["call"] = "notAjax";
+                TempData["id"] = values["id"];
+                @Html.Action(action, values["controller"].ToString(), ViewContext.RouteData.IdRouteValue());
+            }
 
     @* @Html.Action("UserProfile", "Profile", new { id = 2});*@
     @* @Html.Partial("_UserProfilePartial", Model.ProfileAboutModel);*@
